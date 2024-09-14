@@ -1,0 +1,607 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.45 'georgia',serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:'georgia',serif;font-weight:normal;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;color:inherit;font-family:-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}ul{margin-left:1.45rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.45rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;font-size:0.85rem;line-height:1.45rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;font-size:1rem;line-height:1.45rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}blockquote{margin-left:1.45rem;margin-right:1.45rem;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.45rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.45rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.45rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.45rem;margin-bottom:calc(1.45rem / 2);margin-top:calc(1.45rem / 2);}li > ul{margin-left:1.45rem;margin-bottom:calc(1.45rem / 2);margin-top:calc(1.45rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.45rem / 2);}code{font-size:0.85rem;line-height:1.45rem;}kbd{font-size:0.85rem;line-height:1.45rem;}samp{font-size:0.85rem;line-height:1.45rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:0.96667rem;padding-right:0.96667rem;padding-top:0.725rem;padding-bottom:calc(0.725rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}</style><meta name="generator" content="Gatsby 5.13.7"/><meta data-react-helmet="true" name="description" content="Express 미들웨어에 대해 알아보자!"/><meta data-react-helmet="true" property="og:title" content="Express의 본체, 미들웨어에 대해 알아보자"/><meta data-react-helmet="true" property="og:description" content="Express 미들웨어에 대해 알아보자!"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="simjaesung"/><meta data-react-helmet="true" name="twitter:title" content="Express의 본체, 미들웨어에 대해 알아보자"/><meta data-react-helmet="true" name="twitter:description" content="Express 미들웨어에 대해 알아보자!"/><meta data-react-helmet="true" property="image" content="https://simjaesung.github.io"/><meta data-react-helmet="true" property="og:image" content="https://simjaesung.github.io"/><meta data-react-helmet="true" property="twitter:image" content="https://simjaesung.github.io"/><meta name="theme-color" content="#ffffff"/><title data-react-helmet="true">Express의 본체, 미들웨어에 대해 알아보자 | simsorry.dev</title><style data-styled="" data-styled-version="6.1.13">.kFpccA{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;backdrop-filter:saturate(180%) blur(20px);background-color:var(--color-nav-bar);border-bottom:1px solid var(--color-nav-border);}/*!sc*/
+data-styled.g1[id="background__Background-sc-45y16f-0"]{content:"kFpccA,"}/*!sc*/
+.hYWCDl{top:22px;}/*!sc*/
+data-styled.g2[id="menuIcon__MenuIconBreadTop-sc-w017qk-0"]{content:"hYWCDl,"}/*!sc*/
+.hwkRzQ{bottom:22px;}/*!sc*/
+data-styled.g3[id="menuIcon__MenuIconBreadBottom-sc-w017qk-1"]{content:"hwkRzQ,"}/*!sc*/
+.CjIyp{z-index:9999;display:none;}/*!sc*/
+@media (max-width:767px){.CjIyp{position:relative;margin-left:auto;display:block;cursor:pointer;width:var(--nav-height);height:var(--nav-height);border:none;background-color:transparent;}.CjIyp>div{position:absolute;width:18px;height:1px;right:var(--padding-sm);opacity:0.8;transition:opacity 0.3s ease,transform 0.2s ease 0.1s;}.CjIyp>div>div{width:100%;height:100%;background-color:var(--color-text);transition:transform 0.1s ease;}.CjIyp .menuIcon__MenuIconBreadTop-sc-w017qk-0{transform:none;}.CjIyp .menuIcon__MenuIconBreadTop-sc-w017qk-0 div{transform:none;}.CjIyp .menuIcon__MenuIconBreadBottom-sc-w017qk-1{transform:none;}.CjIyp .menuIcon__MenuIconBreadBottom-sc-w017qk-1 div{transform:none;}.CjIyp:hover>div{opacity:1;}}/*!sc*/
+data-styled.g4[id="menuIcon__MenuIconButton-sc-w017qk-2"]{content:"CjIyp,"}/*!sc*/
+.cBqzFy{width:1.125rem;height:1.125rem;fill:var(--color-icon);transform:translateY(-1px);}/*!sc*/
+@media (max-width:767px){.cBqzFy{width:0;height:1rem;transition:width 0.3s ease;}}/*!sc*/
+data-styled.g5[id="themeToggleButton__Icon-sc-18ds2ws-0"]{content:"cBqzFy,"}/*!sc*/
+.kva-DPc{border:none;background-color:var(--color-floating-button);border-radius:var(--border-radius-lg);box-shadow:0 3px 15px var(--color-floating-button-shadow);}/*!sc*/
+@media (max-width:767px){.kva-DPc{visibility:hidden;background-color:transparent;border-radius:0;box-shadow:none;}}/*!sc*/
+data-styled.g6[id="themeToggleButton__ButtonBackground-sc-18ds2ws-1"]{content:"kva-DPc,"}/*!sc*/
+.hLoZIa{z-index:2;display:flex;justify-content:center;align-items:center;background-color:transparent;}/*!sc*/
+data-styled.g7[id="themeToggleButton__Content-sc-18ds2ws-2"]{content:"hLoZIa,"}/*!sc*/
+.jerCNv{color:var(--color-floating-button-text);margin-left:6px;}/*!sc*/
+@media (max-width:767px){.jerCNv{color:var(--color-text);margin-left:0;font-weight:var(--font-weight-medium);border-radius:50%;}}/*!sc*/
+data-styled.g8[id="themeToggleButton__Text-sc-18ds2ws-3"]{content:"jerCNv,"}/*!sc*/
+.ezLDRE{cursor:pointer;box-sizing:border-box;position:fixed;display:flex;justify-content:center;align-items:center;background-color:transparent;z-index:100;right:var(--sizing-md);bottom:var(--sizing-md);padding:var(--sizing-base);padding-right:20px;border:1px solid var(--color-floating-button-border);border-radius:var(--border-radius-lg);font-weight:var(--font-weight-medium);}/*!sc*/
+@media (min-width:767px){.ezLDRE:hover{outline:none;border:1px solid var(--color-floating-button-border-hover);}.ezLDRE:hover .themeToggleButton__Icon-sc-18ds2ws-0,.ezLDRE:hover .themeToggleButton__Text-sc-18ds2ws-3{color:var(--color-floating-button-text-hover);fill:var(--color-floating-button-text-hover);}.ezLDRE:hover .themeToggleButton__ButtonBackground-sc-18ds2ws-1{background-color:var(--color-floating-button-hover);box-shadow:0 3px 15px var(--color-floating-button-shadow-hover);}}/*!sc*/
+@media (max-width:767px){.ezLDRE{justify-content:start;position:static;border-radius:0;border:none;width:100%;padding:0.5rem 0;}.ezLDRE:hover .themeToggleButton__Icon-sc-18ds2ws-0,.ezLDRE:hover .themeToggleButton__Text-sc-18ds2ws-3{fill:var(--color-blue);color:var(--color-blue);}.ezLDRE:hover .themeToggleButton__Icon-sc-18ds2ws-0{width:1rem;margin-right:4px;}.ezLDRE:focus-visible .themeToggleButton__Icon-sc-18ds2ws-0,.ezLDRE:focus-visible .themeToggleButton__Text-sc-18ds2ws-3{fill:var(--color-blue);color:var(--color-blue);}.ezLDRE:focus-visible .themeToggleButton__Icon-sc-18ds2ws-0{width:1rem;margin-right:4px;}}/*!sc*/
+data-styled.g9[id="themeToggleButton__Button-sc-18ds2ws-4"]{content:"ezLDRE,"}/*!sc*/
+.dmQgVn{min-width:var(--min-width);position:sticky;top:0;left:0;width:100%;height:var(--nav-height);z-index:10;}/*!sc*/
+.dmQgVn a:hover{text-decoration:none;}/*!sc*/
+data-styled.g10[id="navBar__Nav-sc-rspn3r-0"]{content:"dmQgVn,"}/*!sc*/
+.kdQOCS{box-sizing:content-box;position:relative;margin:0 auto;max-width:var(--width);padding:0 var(--padding-lg);height:100%;z-index:2;display:flex;justify-content:space-between;align-items:center;}/*!sc*/
+.kdQOCS li{margin:0;list-style-type:none;}/*!sc*/
+@media (max-width:767px){.kdQOCS{padding:0 var(--padding-sm);}}/*!sc*/
+data-styled.g11[id="navBar__Content-sc-rspn3r-1"]{content:"kdQOCS,"}/*!sc*/
+.dpRBQE{z-index:9999;padding:0;border:none;font-size:var(--text-title);font-weight:var(--font-weight-semi-bold);color:var(--color-text);}/*!sc*/
+.dpRBQE a{color:inherit;}/*!sc*/
+@media (max-width:767px){.dpRBQE{font-size:var(--text-md);}}/*!sc*/
+data-styled.g12[id="navBar__Title-sc-rspn3r-2"]{content:"dpRBQE,"}/*!sc*/
+.fxItmH{display:flex;}/*!sc*/
+.fxItmH a{font-weight:var(--font-weight-regular);}/*!sc*/
+.fxItmH a:hover,.fxItmH a:focus{color:var(--color-blue);}/*!sc*/
+.fxItmH li{display:flex;justify-content:center;align-items:center;margin-left:32px;}/*!sc*/
+.fxItmH li:first-child,.fxItmH li:last-child{margin-left:0;}/*!sc*/
+@media (max-width:767px){.fxItmH{pointer-events:none;flex-direction:column;padding:0 var(--sizing-lg);}.fxItmH li:nth-child(0){transition-property:transform,opacity;transition-duration:0.5s,0.3s;transition-delay:0.25s;transition-timing-function:ease-in,ease-out;}.fxItmH li:nth-child(1){transition-property:transform,opacity;transition-duration:0.5s,0.3s;transition-delay:0.19s;transition-timing-function:ease-in,ease-out;}.fxItmH li:nth-child(2){transition-property:transform,opacity;transition-duration:0.5s,0.3s;transition-delay:0.13s;transition-timing-function:ease-in,ease-out;}.fxItmH li:nth-child(3){transition-property:transform,opacity;transition-duration:0.5s,0.3s;transition-delay:0.07s;transition-timing-function:ease-in,ease-out;}.fxItmH li:nth-child(4){transition-property:transform,opacity;transition-duration:0.5s,0.3s;transition-delay:0.010000000000000009s;transition-timing-function:ease-in,ease-out;}.fxItmH li:nth-child(5){transition-property:transform,opacity;transition-duration:0.5s,0.3s;transition-delay:-0.04999999999999999s;transition-timing-function:ease-in,ease-out;}.fxItmH li:nth-child(6){transition-property:transform,opacity;transition-duration:0.5s,0.3s;transition-delay:-0.10999999999999999s;transition-timing-function:ease-in,ease-out;}.fxItmH li:nth-child(7){transition-property:transform,opacity;transition-duration:0.5s,0.3s;transition-delay:-0.16999999999999998s;transition-timing-function:ease-in,ease-out;}.fxItmH li:nth-child(8){transition-property:transform,opacity;transition-duration:0.5s,0.3s;transition-delay:-0.22999999999999998s;transition-timing-function:ease-in,ease-out;}.fxItmH li:nth-child(9){transition-property:transform,opacity;transition-duration:0.5s,0.3s;transition-delay:-0.29000000000000004s;transition-timing-function:ease-in,ease-out;}.fxItmH li{display:block;margin-left:0;font-size:var(--text-md);transform:translateY(0);opacity:0;}.fxItmH a{display:block;height:100%;padding:0.5rem 0;font-weight:var(--font-weight-medium);}.fxItmH li+li::before{content:"";display:block;position:absolute;width:calc(100vw - var(--sizing-lg) * 2);height:1px;transform:translateY(-2px);background-color:var(--color-divider);}}/*!sc*/
+data-styled.g13[id="navBar__LinkUl-sc-rspn3r-3"]{content:"fxItmH,"}/*!sc*/
+@media (max-width:767px){.eEJZMG::after{transition:opacity 0.4s ease-in-out 0.48s;opacity:0;content:"";display:block;position:absolute;top:0;left:0;width:100%;height:100%;background-color:var(--color-post-background);}}/*!sc*/
+data-styled.g14[id="navBar__NavBackground-sc-rspn3r-4"]{content:"eEJZMG,"}/*!sc*/
+.FbGtR{display:none;}/*!sc*/
+@media (max-width:767px){.FbGtR{transition:transform 0.6s cubic-bezier(0.41,0.06,0.05,1) 0.1s;transform:scaleY(0);transform-origin:top;display:block;position:fixed;top:calc(var(--nav-height) - 1px);left:0;width:100%;height:calc(100% - var(--nav-height) + 1px);background-color:var(--color-post-background);}}/*!sc*/
+data-styled.g15[id="navBar__Curtain-sc-rspn3r-5"]{content:"FbGtR,"}/*!sc*/
+@media (max-width:767px){.ivULQJ{width:100%;z-index:200;}}/*!sc*/
+data-styled.g16[id="navBar__LinkContent-sc-rspn3r-6"]{content:"ivULQJ,"}/*!sc*/
+.gpRqRR{display:flex;}/*!sc*/
+@media (max-width:767px){.gpRqRR{position:absolute;top:0;left:0;width:100%;height:var(--nav-height);}}/*!sc*/
+data-styled.g17[id="navBar__LinkWrap-sc-rspn3r-7"]{content:"gpRqRR,"}/*!sc*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,menu,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,main,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}/*!sc*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block;}/*!sc*/
+*[hidden]{display:none;}/*!sc*/
+body{line-height:1;}/*!sc*/
+menu,ol,ul{list-style:none;}/*!sc*/
+blockquote,q{quotes:none;}/*!sc*/
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}/*!sc*/
+table{border-collapse:collapse;border-spacing:0;}/*!sc*/
+:root{font-size:100%;--width:980px;--min-width:320px;--post-width:650px;--nav-height:54px;--footer-height:60px;--grid-gap-sm:10px;--grid-gap-lg:24px;--grid-gap-xl:36px;--padding-xs:10px;--padding-sm:16px;--padding-lg:22px;--border-radius-sm:6px;--border-radius-base:8px;--border-radius-lg:28px;--sizing-xs:4px;--sizing-sm:8px;--sizing-base:16px;--sizing-md:24px;--sizing-lg:40px;--sizing-xl:64px;--text-xs:0.625rem;--text-sm:0.75rem;--text-base:1rem;--text-md:1.125rem;--text-title:1.25rem;--text-lg:1.5rem;--text-xl:3rem;--device-xs-max-width:419px;--device-sm-max-width:767px;--device-md-max-width:1023px;--device-lg-max-width:1441px;--device-xs-max-width-query:(max-width:419px);--device-sm-max-width-query:(max-width:767px);--device-md-max-width-query:(max-width:1023px);--device-lg-max-width-query:(max-width:1441px);--font-weight-regular:400;--font-weight-medium:500;--font-weight-semi-bold:600;--font-weight-bold:700;--font-weight-extra-bold:800;--color-outline:rgba(0,125,250,0.6);}/*!sc*/
+:root body.light{--color-text:#1d1d1d;--color-text-2:#1d1d1d;--color-text-3:#696969;--color-white:#ffffff;--color-nav-bar:rgba(255,255,255,0.7);--color-nav-border:rgba(200,200,200,0.7);--color-category-button:#f2f2f2;--color-background:#f2f2f2;--color-post-background:#ffffff;--color-card:#ffffff;--color-code:#f2f2f2;--color-code-block:#fafafa;--color-code-highlight:rgba(0,0,0,0.05);--color-code-highlight-border:rgba(0,0,0,0.2);--color-gray-1:#f2f2f2;--color-gray-2:#e0e0e0;--color-gray-3:#d1d1d1;--color-gray-4:#868686;--color-gray-5:#6e6e6e;--color-gray-6:#696969;--color-divider:rgba(0,0,0,0.15);--color-dimmed:rgba(0,0,0,0.15);--color-floating-button:rgba(255,255,255,0.7);--color-floating-button-hover:rgba(50,50,50,0.7);--color-floating-button-border:rgba(230,230,230,0.7);--color-floating-button-border-hover:rgba(255,255,255,0.2);--color-floating-button-text:#202020;--color-floating-button-text-hover:#f2f2f2;--color-floating-button-shadow:rgba(0,0,0,0.2);--color-floating-button-shadow-hover:rgba(0,0,0,0.4);--color-blue:#0066cc;--color-icon:#2c2c2c;}/*!sc*/
+:root body.dark{--color-text:#e6e6e6;--color-text-2:#d1d1d1;--color-text-3:#8c8c8c;--color-white:#e6e6e6;--color-nav-bar:rgba(29,29,29,0.7);--color-nav-border:rgba(255,255,255,0.2);--color-category-button:#484848;--color-background:#1c1c1c;--color-post-background:#1c1c1c;--color-card:#2c2c2c;--color-code:#3a3a3a;--color-code-block:#242424;--color-code-highlight:rgba(255,255,255,0.05);--color-code-highlight-border:rgba(255,255,255,0.2);--color-gray-1:#1c1c1c;--color-gray-2:#2c2c2c;--color-gray-3:#3a3a3a;--color-gray-4:#484848;--color-gray-5:#646464;--color-gray-6:#868686;--color-divider:rgba(255,255,255,0.15);--color-dimmed:rgba(0,0,0,0.15);--color-floating-button:rgba(50,50,50,0.7);--color-floating-button-hover:rgba(255,255,255,0.7);--color-floating-button-border:rgba(255,255,255,0.2);--color-floating-button-border-hover:rgba(230,230,230,0.7);--color-floating-button-text:#d1d1d1;--color-floating-button-text-hover:#202020;--color-floating-button-shadow:rgba(0,0,0,0.4);--color-floating-button-shadow-hover:rgba(0,0,0,0.4);--color-blue:#0a84ff;--color-icon:#d1d1d1;}/*!sc*/
+html,body,#___gatsby,#gatsby-focus-wrapper{min-height:100%;}/*!sc*/
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';background-color:var(--color-post-background);-webkit-font-smoothing:antialiased;}/*!sc*/
+body *{color:var(--color-text);}/*!sc*/
+:lang(ko){word-break:keep-all;}/*!sc*/
+ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,hgroup,p,blockquote,figure,form,fieldset,input,legend,pre,abbr,button{margin:0;padding:0;}/*!sc*/
+h1 a,li a{text-decoration:none;}/*!sc*/
+a{text-decoration:none;}/*!sc*/
+*:focus:not(:focus-visible){outline:none;}/*!sc*/
+:focus-visible{outline:4px solid var(--color-outline);outline-offset:1px;}/*!sc*/
+.js-focus-visible :focus:not(.focus-visible){outline:none;}/*!sc*/
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:no-wrap;}/*!sc*/
+data-styled.g19[id="sc-global-lgWzIE1"]{content:"sc-global-lgWzIE1,"}/*!sc*/
+.fjowVx{width:100%;height:100%;min-height:calc(100vh - var(--footer-height));background-color:var(--color-post-background);}/*!sc*/
+data-styled.g20[id="layout__Container-sc-14056qy-0"]{content:"fjowVx,"}/*!sc*/
+.fgjMbz{display:flex;text-align:center;justify-content:center;align-items:center;height:var(--footer-height);background-color:var(--color-gray-1);}/*!sc*/
+data-styled.g21[id="layout__Footer-sc-14056qy-1"]{content:"fgjMbz,"}/*!sc*/
+.dgxyck{font-size:var(--text-sm);font-weight:var(--font-weight-regular);color:var(--color-gray-6);}/*!sc*/
+data-styled.g22[id="layout__Copyright-sc-14056qy-2"]{content:"dgxyck,"}/*!sc*/
+.iOvGEf{color:var(--color-blue);}/*!sc*/
+.iOvGEf:hover{text-decoration:underline;}/*!sc*/
+data-styled.g23[id="layout__RepoLink-sc-14056qy-3"]{content:"iOvGEf,"}/*!sc*/
+.wPTUw{display:block;font-size:0.875rem;font-weight:var(--font-weight-semi-bold);color:var(--color-text-3);}/*!sc*/
+data-styled.g30[id="category__Category-sc-yb1cly-0"]{content:"wPTUw,"}/*!sc*/
+.BWFgc{margin-top:12px;font-size:0.875rem;font-weight:var(--font-weight-regular);color:var(--color-text-3);}/*!sc*/
+data-styled.g31[id="dateTime__DateTime-sc-czgcwb-0"]{content:"BWFgc,"}/*!sc*/
+.hNMxxq h1,.hNMxxq h2,.hNMxxq h3,.hNMxxq h4,.hNMxxq h5,.hNMxxq h6{font-weight:var(--font-weight-bold);}/*!sc*/
+.hNMxxq table{margin-bottom:var(--sizing-base);}/*!sc*/
+.hNMxxq td,.hNMxxq th{padding:var(--padding-xs);border:1px solid var(--color-gray-3);}/*!sc*/
+.hNMxxq th{font-weight:var(--font-weight-semi-bold);}/*!sc*/
+.hNMxxq strong{font-weight:var(--font-weight-semi-bold);}/*!sc*/
+.hNMxxq a,.hNMxxq p{font-weight:var(--font-weight-regular);}/*!sc*/
+.hNMxxq a{text-decoration:none;color:var(--color-blue)!important;}/*!sc*/
+.hNMxxq a *{color:var(--color-blue)!important;}/*!sc*/
+.hNMxxq a:hover,.hNMxxq a:active{text-decoration:underline;}/*!sc*/
+.hNMxxq>*:first-child{margin-top:0;}/*!sc*/
+.hNMxxq h1{font-size:2.5rem;}/*!sc*/
+@media (max-width:767px){.hNMxxq h1{font-size:2rem;}}/*!sc*/
+.hNMxxq h2{font-size:1.75rem;line-height:1.3;margin-bottom:1.45rem;margin-top:3.2625rem;}/*!sc*/
+@media (max-width:767px){.hNMxxq h2{font-size:1.3125rem;}}/*!sc*/
+.hNMxxq h3{font-size:1.31951rem;line-height:1.3;margin-bottom:1.45rem;margin-top:2.175rem;}/*!sc*/
+@media (max-width:767px){.hNMxxq h3{font-size:1.1875rem;}}/*!sc*/
+.hNMxxq h4,.hNMxxq h5,.hNMxxq h6{margin-bottom:0.725rem;margin-top:1.45rem;}/*!sc*/
+.hNMxxq ul,.hNMxxq ol{margin-top:1.45rem;margin-bottom:1.45rem;margin-left:1.8125rem;}/*!sc*/
+.hNMxxq ol{list-style:auto;}/*!sc*/
+.hNMxxq ul{list-style:disc;}/*!sc*/
+.hNMxxq li>ul,.hNMxxq li>ol{margin-top:0;margin-bottom:0;}/*!sc*/
+.hNMxxq li>p{margin-bottom:0;}/*!sc*/
+.hNMxxq li>ol,.hNMxxq li>ul{margin-left:1.8125rem;}/*!sc*/
+.hNMxxq li{margin-bottom:0.435rem;}/*!sc*/
+.hNMxxq li{line-height:1.68;}/*!sc*/
+.hNMxxq p,.hNMxxq li,.hNMxxq blockquote{font-size:1.0625rem;}/*!sc*/
+.hNMxxq p{line-height:1.68;text-align:left;margin-bottom:var(--sizing-md);}/*!sc*/
+.hNMxxq hr{margin:var(--sizing-lg) 0;background:var(--color-gray-3);}/*!sc*/
+.hNMxxq blockquote{border-left:0.25rem solid var(--color-gray-2);padding-left:var(--sizing-base);margin:var(--sizing-md) 0;}/*!sc*/
+.hNMxxq blockquote *{color:var(--color-gray-6);}/*!sc*/
+.hNMxxq img{display:block;}/*!sc*/
+.hNMxxq pre,.hNMxxq code{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;background-color:var(--color-code-block);}/*!sc*/
+.hNMxxq pre{border:1px solid var(--color-gray-3);}/*!sc*/
+.hNMxxq pre.grvsc-container{margin:var(--sizing-md) 0;}/*!sc*/
+.hNMxxq .grvsc-line-highlighted::before{background-color:var(--color-code-highlight)!important;box-shadow:inset 4px 0 0 0 var(--color-code-highlight-border)!important;}/*!sc*/
+.hNMxxq *:not(pre)>code{background-color:var(--color-code);padding:0.2rem 0.4rem;margin:0;font-size:85%;border-radius:3px;}/*!sc*/
+data-styled.g32[id="markdown__Markdown-sc-1dqs4c9-0"]{content:"hNMxxq,"}/*!sc*/
+.hESjxP{margin-top:var(--sizing-xl);}/*!sc*/
+@media (max-width:767px){.hESjxP{margin-top:var(--sizing-lg);}}/*!sc*/
+data-styled.g33[id="blogPost__OuterWrapper-sc-1bnx5c-0"]{content:"hESjxP,"}/*!sc*/
+.kNgyOd{width:var(--post-width);margin:0 auto;padding-bottom:var(--sizing-lg);}/*!sc*/
+@media (max-width:767px){.kNgyOd{width:87.5%;}}/*!sc*/
+data-styled.g34[id="blogPost__InnerWrapper-sc-1bnx5c-1"]{content:"kNgyOd,"}/*!sc*/
+.cCuDwc{width:100%;padding:0 var(--padding-sm);margin:0 auto;margin-bottom:var(--sizing-xl);}/*!sc*/
+@media (max-width:767px){.cCuDwc{width:auto;}}/*!sc*/
+data-styled.g35[id="blogPost__CommentWrap-sc-1bnx5c-2"]{content:"cCuDwc,"}/*!sc*/
+.dvvpsf{font-size:0.875rem;font-weight:var(--font-weight-semi-bold);}/*!sc*/
+data-styled.g36[id="blogPost__PostCategory-sc-1bnx5c-3"]{content:"dvvpsf,"}/*!sc*/
+.czsfih{margin-bottom:var(--sizing-md);}/*!sc*/
+data-styled.g37[id="blogPost__Info-sc-1bnx5c-4"]{content:"czsfih,"}/*!sc*/
+.gTxePL{display:block;margin-top:var(--sizing-xs);}/*!sc*/
+data-styled.g38[id="blogPost__Time-sc-1bnx5c-5"]{content:"gTxePL,"}/*!sc*/
+.cgXRuy{margin-top:var(--sizing-lg);line-height:1.5;font-size:var(--text-lg);}/*!sc*/
+@media (max-width:767px){.cgXRuy{line-height:1.31579;font-size:1.1875rem;}}/*!sc*/
+data-styled.g39[id="blogPost__Desc-sc-1bnx5c-6"]{content:"cgXRuy,"}/*!sc*/
+.gqfEkg{width:100%;height:1px;background-color:var(--color-gray-3);margin-top:var(--sizing-lg);margin-bottom:var(--sizing-lg);}/*!sc*/
+data-styled.g40[id="blogPost__Divider-sc-1bnx5c-7"]{content:"gqfEkg,"}/*!sc*/
+.cnFjTO{font-weight:var(--font-weight-bold);line-height:1.1875;font-size:var(--text-xl);}/*!sc*/
+@media (max-width:1023px){.cnFjTO{line-height:1.21875;font-size:2.5rem;}}/*!sc*/
+@media (max-width:767px){.cnFjTO{line-height:1.21875;font-size:2rem;}}/*!sc*/
+data-styled.g41[id="blogPost__Title-sc-1bnx5c-8"]{content:"cnFjTO,"}/*!sc*/
+</style><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="sitemap" type="application/xml" href="/sitemap-index.xml"/><link rel="alternate" type="application/rss+xml" title="simsorry.dev&#x27;s RSS Feed" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=bc383ef50aa22532d835e946470094df" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=bc383ef50aa22532d835e946470094df"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=bc383ef50aa22532d835e946470094df"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=bc383ef50aa22532d835e946470094df"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=bc383ef50aa22532d835e946470094df"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=bc383ef50aa22532d835e946470094df"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=bc383ef50aa22532d835e946470094df"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=bc383ef50aa22532d835e946470094df"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=bc383ef50aa22532d835e946470094df"/></head><body><script>
+          (() => {    
+            window.__onThemeChange = function() {};      
+
+            function setTheme(newTheme) {                  
+              window.__theme = newTheme;                  
+              preferredTheme = newTheme;                  
+              document.body.className = newTheme;
+              document.body.dataset.theme = newTheme;                 
+              window.__onThemeChange(newTheme);                
+            }
+
+            let preferredTheme
+
+            try {
+              preferredTheme = localStorage.getItem('theme')
+            } catch (err) {}
+
+            window.__setPreferredTheme = newTheme => {
+              setTheme(newTheme)
+
+              try {
+                localStorage.setItem('theme', newTheme)
+              } catch (err) {}
+            }
+
+            let darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+            darkQuery.addEventListener('change', e => {
+              window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+            })
+
+            setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+          })()
+        </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="layout__Container-sc-14056qy-0 fjowVx"><nav aria-label="Global Navigation" class="navBar__Nav-sc-rspn3r-0 dmQgVn"><div class="background__Background-sc-45y16f-0 navBar__NavBackground-sc-rspn3r-4 kFpccA eEJZMG"></div><div class="navBar__Content-sc-rspn3r-1 kdQOCS"><h1 class="navBar__Title-sc-rspn3r-2 dpRBQE"><a href="/">simsorry.dev</a></h1><div class="navBar__LinkWrap-sc-rspn3r-7 gpRqRR"><div class="navBar__Curtain-sc-rspn3r-5 FbGtR"></div><div class="navBar__LinkContent-sc-rspn3r-6 ivULQJ"><button aria-label="Menu" class="menuIcon__MenuIconButton-sc-w017qk-2 CjIyp"><div class="menuIcon__MenuIconBreadTop-sc-w017qk-0 hYWCDl"><div></div></div><div class="menuIcon__MenuIconBreadBottom-sc-w017qk-1 hwkRzQ"><div></div></div></button><ul class="navBar__LinkUl-sc-rspn3r-3 fxItmH"><li><a href="/">Home</a></li><li><a target="__blank" rel="noreferrer" href="https://github.com/simjaesung">Github</a></li><li><button class="themeToggleButton__Button-sc-18ds2ws-4 ezLDRE"><div class="background__Background-sc-45y16f-0 themeToggleButton__ButtonBackground-sc-18ds2ws-1 kFpccA kva-DPc"></div><div class="themeToggleButton__Content-sc-18ds2ws-2 hLoZIa"><svg version="1.1" x="0px" y="0px" viewBox="0 0 24 24" class="themeToggleButton__Icon-sc-18ds2ws-0 cBqzFy"><path d="M16.3,15.2c-4.1-1.2-7.2-4.8-7.5-9.1C8.8,4.8,8.9,3.5,9.3,2.4C4.8,3.6,1.5,8,2.1,13.1c0.5,4.6,4.2,8.3,8.7,8.8 c4.9,0.6,9.2-2.4,10.6-6.7C19.9,15.7,18.1,15.8,16.3,15.2z"></path></svg><span class="themeToggleButton__Text-sc-18ds2ws-3 jerCNv">Dark theme</span></div></button></li></ul></div></div></div></nav><main><article><div class="blogPost__OuterWrapper-sc-1bnx5c-0 hESjxP"><div class="blogPost__InnerWrapper-sc-1bnx5c-1 kNgyOd"><div><header><div class="blogPost__Info-sc-1bnx5c-4 czsfih"><span class="category__Category-sc-yb1cly-0 blogPost__PostCategory-sc-1bnx5c-3 wPTUw dvvpsf">Node.js</span><time dateTime="2024-09-01" class="dateTime__DateTime-sc-czgcwb-0 blogPost__Time-sc-1bnx5c-5 BWFgc gTxePL">2024-09-01</time></div><h1 class="blogPost__Title-sc-1bnx5c-8 cnFjTO">Express의 본체, 미들웨어에 대해 알아보자</h1><p class="blogPost__Desc-sc-1bnx5c-6 cgXRuy">Express 미들웨어에 대해 알아보자!</p></header><div class="blogPost__Divider-sc-1bnx5c-7 gqfEkg"></div><article class="markdown__Markdown-sc-1dqs4c9-0 hNMxxq"><h2>Express 프레임워크</h2>
+<p>해당 글의 주제인 미들웨어를 알아보기 전에 먼저 Node.js 에서 제공하는 Express에 대해 알아보겠습니다.</p>
+<p>Node.js의 Express 프레임워크는 웹 애플리케이션과 API를 구축하는데 널리 사용되는 강력한 도구입니다.</p>
+<p><strong>“Node.js 로 백엔드 개발이 가능하다!”</strong> 이는 아마도 Express  프레임워크 덕분이지 않을까 생각이 듭니다.
+<br/></p>
+<p>성능도 꽤 좋다고 알려져있습니다!
+구글 개발자 형님들이 Javascript 런타임인 V8엔진을 워낙 기가막히게 만들었기 때문이 아닐까 생각이 드네요. (아마 Node.js 가장 큰 특징인 싱글스레드, 비동기 논블로킹I/O가 한 몫을 하지 않았을까?)
+<br/></p>
+<p>아무튼 이러한 특성들로 인해 Express는 웹 개발에서 강력한 도구로 자리잡았습니다.</p>
+<p>특히 오늘의 글 주제인 미들웨어 시스템은 Express의 핵심 기능 중 하나로, 개발자들에게 큰 유연성을 제공합니다.</p>
+<hr/>
+<h2>미들웨어?</h2>
+<blockquote>
+<p>그래서 미들웨어가 뭔데?</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>우선 미들웨어는 함수이자 express의 핵심입니다.</strong>
+(미들웨어가 express의 전부라 해도 이상하지 않을 정도..)
+<br/></p>
+</li>
+<li>
+<p><strong>미들웨어의 미들(middle) 은 단어 뜻 그대로 중간에 위치하기 때문에 이런 이름이 붙여지게 된 것입니다.</strong></p>
+<p>어디 중간에 있냐면? 바로 **요청(request)**과 <strong>응답(response)</strong> 사이에 위치합니다.</p>
+<p>대강 그림을 그려보면 아래와 같습니다.</p>
+<p><img src="https://velog.velcdn.com/images/simsorry/post/b14d248f-343a-4361-ab34-4438ffa3cffd/image.png" alt=""></p>
+<p>미들웨어는 해당 위치에 존재하면서 요청과 응답을 조작하여 기능을 추가하기도, 나쁜 요청을 걸러내기도 합니다.
+<br/></p>
+</li>
+<li>
+<p>주로 사용되는 매개변수는 4개가 있습니다. <code>req,res,next,err</code></p>
+<ul>
+<li>
+<p><code>req</code>는 클라이언트로부터의 HTTP 요청을, <code>res</code>는 서버에서 클라이언트로 보내는 HTTP 응답을 나타냅니다.</p>
+</li>
+<li>
+<p><code>err</code> 는 에러처리 미들웨어에서 주로 사용되는 인자로, 에러처리가 쉽게 되도록 도와줍니다.</p>
+</li>
+<li>
+<p>마지막으로 <code>next</code> 는 미들웨어간의 사이클이 이루어질 수 있도록 도와주는 녀석입니다.
+<br/></p>
+</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h2>미들웨어 사용방식</h2>
+<p>미들웨어는 <code>app.use</code>와 함께 사용됩니다.</p>
+<p><code>app.use(미들웨어)</code> 의 모양을 가지고 있습니다.</p>
+<br/>
+<p><strong>미들웨어가 실행되는 형태</strong></p>
+<table>
+<thead>
+<tr>
+<th>미들웨어가 실행되는 형태</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app.use(미들웨어)</code></td>
+<td>모든 요청에서 미들웨어 실행</td>
+</tr>
+<tr>
+<td><code>app.use(’/abc’,미들웨어)</code></td>
+<td>abc 경로로 들어오는 요청에 미들웨어 실행</td>
+</tr>
+<tr>
+<td><code>app.post(’/abc’,미들웨어)</code></td>
+<td>abc 경로로 들어오는 post 요청에서 미들웨어 실행</td>
+</tr>
+</tbody>
+</table>
+<p>위 형태를 보면 미들웨어가 왜 함수인지 알 수 있습니다.</p>
+<ul>
+<li>
+<p><code>use</code> 함수에 대해서는 모든 요청에 대한 응답</p>
+</li>
+<li>
+<p>하지만 첫번째 파라미터로 요청 주소를 기입할 시 해당 주소에 요청된거만 응답</p>
+</li>
+<li>
+<p>더불어 <code>post</code>, <code>get</code>, <code>delete</code> 등등 다른 <strong>HTTP의 메서드</strong>를 붙여주면 그 범위를 더 좁힐 수 있습니다.</p>
+</li>
+</ul>
+<p><br/><hr/></p>
+<h2>미들웨어의 역할</h2>
+<p>미들웨어의 역할을 조금 더 자세히 알아보도록 하겠습니다.</p>
+<p>미들웨어의 주 역할은 아래 4가지라고 말할 수 있습니다.</p>
+<br/>
+<ol>
+<li><strong>모든 코드 실행</strong></li>
+</ol>
+<ul>
+<li>미들웨어는 요청이 들어오면 어떤 JavaScript 코드든 실행할 수 있습니다.</li>
+<li>요청이 들어올 때마다, 로그 기록, DB 쿼리문 수행 등등을 시킬 수 있습니다.</li>
+</ul>
+<pre class="grvsc-container github-light-theme grvsc-ps-t4tStz" data-language="jsx" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">app.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">use</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">((</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">req</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">, </span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">res</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">, </span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">) </span><span class="grvsc-tiszgT-5 grvsc-t4tStz-9">=&gt;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">  </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-3">console</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-1">log</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">`지금 날짜는 ${</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-10">new</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10"> </span><span class="grvsc-tiszgT-10 grvsc-t4tStz-10">Date</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">()}`</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">  </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">();</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">});</span></span></span></code></pre>
+<br/>
+<ol start="2">
+<li><strong>요청 및 응답 객체를 변경</strong></li>
+</ol>
+<ul>
+<li>미들웨어는 요청(req) 객체와 응답(res) 객체에 접근하여 이를 수정할 수 있습니다.</li>
+<li>요청 객체를 수정하여 데이터나 속성을 포함시키거나, 응답 객체를 수정하여 헤더를 설정하거나 내용을 추가할 수 있습니다.</li>
+</ul>
+<pre class="grvsc-container github-light-theme grvsc-ps-t4tStz" data-language="jsx" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">app.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">use</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">((</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">req</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">, </span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">res</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">, </span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">) </span><span class="grvsc-tiszgT-5 grvsc-t4tStz-9">=&gt;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">  req.requestTime </span><span class="grvsc-tiszgT-1 grvsc-t4tStz-9">=</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-3">Date</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">now</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(); </span><span class="grvsc-tiszgT-6 grvsc-t4tStz-2">// 요청 객체에 새로운 속성 추가</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">  res.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">setHeader</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">&#39;X-Powered-By&#39;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">, </span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">&#39;Express&#39;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">); </span><span class="grvsc-tiszgT-6 grvsc-t4tStz-2">// 응답 헤더 설정</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">  </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">();</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">});</span></span></span></code></pre>
+<br/>
+<ol start="3">
+<li><strong>요청-응답 주기 종료</strong></li>
+</ol>
+<ul>
+<li>미들웨어는 요청-응답 주기를 완전히 종료할 수 있습니다.</li>
+<li>이는 클라이언트에게 응답을 보내거나, 리다이렉션을 수행하는 등의 방법으로 이루어집니다.</li>
+<li>주기를 종료하면, 해당 요청에 대해 더 이상의 미들웨어나 라우트 핸들러가 실행되지 않습니다.</li>
+</ul>
+<pre class="grvsc-container github-light-theme grvsc-ps-t4tStz" data-language="jsx" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">app.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">use</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">((</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">req</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">, </span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">res</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">, </span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">) </span><span class="grvsc-tiszgT-5 grvsc-t4tStz-9">=&gt;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">  </span><span class="grvsc-tiszgT-5 grvsc-t4tStz-9">if</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> (</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-9">!</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">req.headers.authorization) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">    res.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">status</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-3">401</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">).</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">send</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">&#39;Unauthorized&#39;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">); </span><span class="grvsc-tiszgT-6 grvsc-t4tStz-2">// 요청-응답 주기 종료</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">    </span><span class="grvsc-tiszgT-5 grvsc-t4tStz-9">return</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">; </span><span class="grvsc-tiszgT-6 grvsc-t4tStz-2">// 다음 미들웨어로 진행하지 않음</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">  }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">  </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">();</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">});</span></span></span></code></pre>
+<br/>
+<ol start="4">
+<li><strong>다음 미들웨어 함수 호출</strong></li>
+</ol>
+<ul>
+<li>
+<p>미들웨어는 <code>next()</code> 함수를 호출하여 다음 미들웨어로 제어를 넘길 수 있습니다.</p>
+</li>
+<li>
+<p>이는 미들웨어 체인을 따라 요청이 처리되도록 합니다.</p>
+<ul>
+<li>
+<p><strong>미들웨어 체인이란?</strong>
+여러 미들웨어를 연결하여 사용하는 방식을 뜻하는 용어입니다.</p>
+<pre class="grvsc-container github-light-theme grvsc-ps-t4tStz" data-language="jsx" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">app.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">use</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">((</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">req</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">, </span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">res</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">, </span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">) </span><span class="grvsc-tiszgT-5 grvsc-t4tStz-9">=&gt;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">  </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-3">console</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-1">log</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">&#39;첫 번째 미들웨어&#39;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">  </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">();</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">}, (</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">req</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">, </span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">res</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">, </span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">) </span><span class="grvsc-tiszgT-5 grvsc-t4tStz-9">=&gt;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">  </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-3">console</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-1">log</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">&#39;두 번째 미들웨어&#39;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">  </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">();</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">});</span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><code>next()</code>를 호출하지 않으면, 요청 처리가 해당 미들웨어에서 멈추게 됩니다.</p>
+</li>
+</ul>
+<pre class="grvsc-container github-light-theme grvsc-ps-t4tStz" data-language="jsx" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">app.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">use</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">((</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">req</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">, </span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">res</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">, </span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">) </span><span class="grvsc-tiszgT-5 grvsc-t4tStz-9">=&gt;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">  </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-3">console</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-1">log</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">&#39;첫 번째 미들웨어&#39;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">  </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(); </span><span class="grvsc-tiszgT-6 grvsc-t4tStz-2">// 다음 미들웨어로 제어 넘김</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">});</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">app.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">use</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">((</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">req</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">, </span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">res</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">, </span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">) </span><span class="grvsc-tiszgT-5 grvsc-t4tStz-9">=&gt;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">  </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-3">console</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-1">log</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">&#39;두 번째 미들웨어&#39;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">  </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">();</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">});</span></span></span></code></pre>
+<p><br/><hr/></p>
+<h2><strong>여러 서드파티 미들웨어</strong></h2>
+<p>Express 생태계에는 많은 유용한 서드파티 미들웨어가 존재합니다.</p>
+<h3>1. <code>morgan 미들웨어</code></h3>
+<pre class="grvsc-container github-light-theme grvsc-ps-t4tStz" data-language="jsx" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-5 grvsc-t4tStz-9">const</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-1">morgan</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-1 grvsc-t4tStz-9">=</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-1">require</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">&#39;morgan&#39;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">app.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">use</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">morgan</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">&#39;dev&#39;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">));</span></span></span></code></pre>
+<ul>
+<li>
+<p>요청과 응답에 대한 정보를 콘솔에 기록</p>
+</li>
+<li>
+<p>인수로는 <code>dev</code>이외에 <code>combined</code>, <code>short</code>, <code>tiny</code>등이 존재</p>
+<ul>
+<li>내가 참고한 자료에서는 대게 개발환경에서는 <code>dev</code>, 배포 환경에서는 <code>combined</code>를 애용한다고 하네요..!</li>
+</ul>
+</li>
+<li>
+<p><code>dev</code> 출력 결과
+<img src="https://velog.velcdn.com/images/simsorry/post/98ed6e96-ab45-4c94-a0d9-4199e059dd80/image.png" width="45%" height="n%"></p>
+</li>
+<li>
+<p><code>combined</code> 출력 결과
+<img src="https://velog.velcdn.com/images/simsorry/post/84c4ede3-adba-4f36-8c00-1584a98e9b8a/image.png" alt=""></p>
+</li>
+</ul>
+<br/>
+<h3>2. <code>static 미들웨어</code></h3>
+<pre class="grvsc-container github-light-theme grvsc-ps-t4tStz" data-language="jsx" data-index="6"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">app.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">use</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(express.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">static</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-1">__dirname</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-1 grvsc-t4tStz-9">+</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">&#39;/public&#39;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">));</span></span></span></code></pre>
+<ul>
+<li>static 미들웨어는 정적파일들을 제공하는 라우터 역할</li>
+<li>기본적으로 expree에 의해 제공되기에 별도로 설치할 필요가 없음</li>
+<li>함수의 인수로 정적 파일들이 담겨 있는 폴더를 지정하면 설정 완료</li>
+</ul>
+<br/>
+<h3>3. <code>body-parser 미들웨어</code></h3>
+<pre class="grvsc-container github-light-theme grvsc-ps-t4tStz" data-language="jsx" data-index="7"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">app.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">use</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(express.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">json</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">());</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">app.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">use</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(express.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">urlencoded</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">({ extended: </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-3">true</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> }));</span></span></span></code></pre>
+<ul>
+<li>
+<p>요청(req) 에 본문에 있는 데이터를 해석하여 req.body 객체에 담아주는 미들웨어</p>
+</li>
+<li>
+<p>express에 내장되어있으므로 따로 설치할 필요는 없음</p>
+</li>
+<li>
+<p><strong>이를 통해 우리가 데이터교환이 더 쉽게 가능해지는 것</strong></p>
+</li>
+<li>
+<p>보통 폼 데이터나 AJAX 요청의 데이터를 처리</p>
+</li>
+<li>
+<p>이미지,동영상,파일 데이터 등은 처리는 불가</p>
+<ul>
+<li>이는 <code>multer</code> 모듈을 통해 처리가 가능하다고 합니다.</li>
+</ul>
+</li>
+<li>
+<p><code>extended:</code></p>
+<ul>
+<li><code>extended: true</code> : qs모듈을 사용하여 쿼리 스트링 해결</li>
+<li><code>extended: false</code> : 노드의 querystring모듈을 사용하여 쿼리스트링 해결</li>
+</ul>
+</li>
+</ul>
+<br/>
+<p>우선 직접 사용해 본 서드파티만 자세히 작성해보았으며,</p>
+<p>위 작성한 미들웨어 이외에도 다양한 서드파티 미들웨어들이 존재합니다.</p>
+<ul>
+<li>
+<p><strong>cookie-parser 미들웨어</strong> : <code>req</code>에 동봉된 쿠키를 해석해 <code>req.cookies</code> 객체로 만들어주는 미들웨어</p>
+</li>
+<li>
+<p><strong>exoress-session 미들웨어</strong> : 세션 관리용 미들웨어. 로그인 등의 기능을 구현할 때 사용하는 세션을 사용자 별로 <code>req.session</code> 객체 안에 유지시켜주는 미들웨어</p>
+</li>
+<li>
+<p><strong>multer 미들웨어</strong> :  이미지, 동영상, 파일 데이터 등을 처리해주는 미들웨어</p>
+</li>
+</ul>
+<p><br/><hr/></p>
+<h2><strong>에러처리 미들웨어</strong></h2>
+<p>에러 처리는 Express 애플리케이션에서 중요한 부분입니다.</p>
+<p>Express는 기본적인 에러 처리 기능을 제공하지만, 커스텀 에러 처리 미들웨어를 사용하면 더 세밀한 제어가 가능합니다.</p>
+<p>그리고 일반적으로 파일 가장 마지막에 위치시킨다고 합니다.</p>
+<br/>
+<p><strong>기본 에러 처리 미들웨어</strong></p>
+<pre class="grvsc-container github-light-theme grvsc-ps-t4tStz" data-language="jsx" data-index="8"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">app.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">use</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">((</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">err</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">,</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">req</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">,</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">res</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">,</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">)</span><span class="grvsc-tiszgT-5 grvsc-t4tStz-9">=&gt;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">{</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">	</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-3">console</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-1">log</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(err);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">	res.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">status</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-3">500</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">).</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">send</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(err.message);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">});</span></span></span></code></pre>
+<p>이 미들웨어는 애플리케이션에서 발생하는 모든 에러를 캐치하고 처리합니다.
+<code>next(error)</code>를 통해 전달된 에러는 이 미들웨어에서 처리된다고 보면 될 것 같습니다.</p>
+<br/>
+<p><strong>커스텀 에러 생성 및 전달</strong></p>
+<pre class="grvsc-container github-light-theme grvsc-ps-t4tStz" data-language="jsx" data-index="9"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">app.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">use</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">((</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">req</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">,</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">res</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">,</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">)</span><span class="grvsc-tiszgT-5 grvsc-t4tStz-9">=&gt;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">{</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">	</span><span class="grvsc-tiszgT-5 grvsc-t4tStz-9">const</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-1">error</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-1 grvsc-t4tStz-9">=</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-1 grvsc-t4tStz-9">new</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-10 grvsc-t4tStz-1">Error</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">&quot;인증 불가&quot;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">	error.status </span><span class="grvsc-tiszgT-1 grvsc-t4tStz-9">=</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-3">401</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">	</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(error);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">})</span></span></span></code></pre>
+<p>이 예제는 특정 조건에서 커스텀 에러를 생성하고 <code>next()</code>를 통해 에러 처리 미들웨어로 전달하는 방법입니다.</p>
+<br/>
+<p><strong>실전 에러 처리 미들웨어</strong></p>
+<p>실제 개발에서는 조금 더 복잡한 에러처리가 필요할 수 있습니다.</p>
+<p>해당 예제는 좀 더 상세한 에러처리 미들웨어 예시입니다.</p>
+<pre class="grvsc-container github-light-theme grvsc-ps-t4tStz" data-language="jsx" data-index="10"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">app.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">use</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">((</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">req</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">,</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">res</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">,</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">)</span><span class="grvsc-tiszgT-5 grvsc-t4tStz-9">=&gt;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">{</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">	</span><span class="grvsc-tiszgT-5 grvsc-t4tStz-9">const</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-1">error</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-1 grvsc-t4tStz-9">=</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-1 grvsc-t4tStz-9">new</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-10 grvsc-t4tStz-1">Error</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">`${</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-10">res</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">.</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-10">method</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">} ${</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-10">req</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">.</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-10">url</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">} 라우터가 없습니다.`</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">	error.status </span><span class="grvsc-tiszgT-1 grvsc-t4tStz-9">=</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-3">404</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">	</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(error);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">});</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">app.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">use</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">((</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">err</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">,</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">req</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">,</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">res</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">,</span><span class="grvsc-tiszgT-11 grvsc-t4tStz-6">next</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">)</span><span class="grvsc-tiszgT-5 grvsc-t4tStz-9">=&gt;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">{</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">	res.locals.message </span><span class="grvsc-tiszgT-1 grvsc-t4tStz-9">=</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> err.message;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">	res.locals.error </span><span class="grvsc-tiszgT-1 grvsc-t4tStz-9">=</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-1">process</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-1">env</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-1">NODE_ENV</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-1 grvsc-t4tStz-9">!==</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">&#39;production&#39;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-1 grvsc-t4tStz-9">?</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> err </span><span class="grvsc-tiszgT-1 grvsc-t4tStz-9">:</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> {};</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">	res.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">status</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(err.status </span><span class="grvsc-tiszgT-1 grvsc-t4tStz-9">||</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1"> </span><span class="grvsc-tiszgT-7 grvsc-t4tStz-3">500</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">	res.</span><span class="grvsc-tiszgT-7 grvsc-t4tStz-5">render</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">(</span><span class="grvsc-tiszgT-8 grvsc-t4tStz-10">&#39;error&#39;</span><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="grvsc-tiszgT-1 grvsc-t4tStz-1">});</span></span></span></code></pre>
+<ul>
+<li>
+<p>요청된 라우트가 없을 경우 404 에러를 생성하고 이를 error 처리 미들웨어에 넘겨줍니다.</p>
+</li>
+<li>
+<p>error 처리 미들웨어는 발생한 모든 에러를 처리하며, 개발 환경에서는 상세한 에러 정보를, 프로덕션 환경에서는 제한된 정보만 제공합니다.</p>
+</li>
+</ul>
+<p><br/><hr/></p>
+<h2>결론</h2>
+<p>Express의 미들웨어는 강력하고 유연한 도구로, 웹 애플리케이션의 핵심 기능을 모듈화하고 확장하는데 중요한 역할을 합니다.</p>
+<p>미들웨어 순서, 한 기능에 집중하는 작은 미들웨어 함수, 비동기 작업 시 적절한 <code>next()</code> 호출, 유연한 에러처리 등등을 유의하며 미들웨어를 사용한다면, 견고하고 유지보수가 쉬운 Node.js 애플리케이션을 구축할 수 있을 것이라고 생각이 듭니다!</p>
+<hr/>
+<h2>참고</h2>
+<ul>
+<li><strong>Node.js 교과서</strong> <strong>: 기본기에 충실한 노드제이에스 14 입문서</strong></li>
+<li><a href="https://lakelouise.tistory.com/211">https://lakelouise.tistory.com/211</a></li>
+</ul>
+<style class="grvsc-styles">
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line > * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: ' ';
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting > .grvsc-code > .grvsc-line::before {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+  .github-light-theme {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  .github-light-theme .grvsc-tiszgT-1 { color: #000000; }
+  .github-light-theme .grvsc-tiszgT-7 { color: #005CC5; }
+  .github-light-theme .grvsc-tiszgT-11 { color: #E36209; }
+  .github-light-theme .grvsc-tiszgT-5 { color: #D73A49; }
+  .github-light-theme .grvsc-tiszgT-8 { color: #032F62; }
+  .github-light-theme .grvsc-tiszgT-10 { color: #6F42C1; }
+  .github-light-theme .grvsc-tiszgT-6 { color: #6A737D; }
+  .github-light-theme .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+  body[data-theme=dark] .grvsc-ps-t4tStz { color: #ffffff; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-1 { color: #FFFFFF; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-5 { color: #BB97E7; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-6 { color: #F39961; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-9 { color: #EB7E81; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-3 { color: #66B5F6; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-10 { color: #9DCDF5; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-t4tStz-2 { color: #A19B8F; }
+  body[data-theme=dark] .grvsc-ps-t4tStz .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(0, 0, 0, 0.05));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(0, 0, 0, 0.2));
+  }
+</style></article></div></div></div></article><section class="blogPost__CommentWrap-sc-1bnx5c-2 cCuDwc"><div></div></section></main></div><footer role="contentinfo" class="layout__Footer-sc-14056qy-1 fgjMbz"><span aria-label="Copyright" class="layout__Copyright-sc-14056qy-2 dgxyck">Copyright © simjaesung. Built with <a href="https://simjaesung.github.io/" target="__blank" class="layout__RepoLink-sc-14056qy-3 iOvGEf">simsorry-blog</a></span></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/middle-ware/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-8d0f8f480843cd7541ea.js\"],\"component---cache-caches-gatsby-plugin-offline-app-shell-js\":[\"/component---cache-caches-gatsby-plugin-offline-app-shell-js-a527169c2089acb67b40.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-278ddfb4d8f0d92ab324.js\"],\"component---src-pages-about-tsx\":[\"/component---src-pages-about-tsx-aba88fca2067a16440c4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-65d5660446578349725e.js\"],\"component---src-templates-blog-post-tsx\":[\"/component---src-templates-blog-post-tsx-6d9c77df187839004eaa.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="a70de1036614b30c49ee";</script><script src="/webpack-runtime-d474825eea5339420e6c.js" async></script><script src="/framework-c2f03b997ec32151e2b6.js" async></script><script src="/app-8d0f8f480843cd7541ea.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
