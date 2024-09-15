@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[simsorry.dev's RSS Feed]]></title><description><![CDATA[simsorry blog]]></description><link>https://simjaesung.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 15 Sep 2024 14:26:00 GMT</lastBuildDate><item><title><![CDATA[Jest 에서 ESM 모듈 사용하는 방법]]></title><description><![CDATA[Jest 소개  Jest는 Facebook에서 만들어져 React 프레임워크를 더불어 다양한 JavaScript 프로젝트에서 널리 사용되고 있습니다. Jest는 다음과 같은 기능을 단일 패키지로 제공합니다: Test Runner…]]></description><link>https://simjaesung.github.io/blog/jest-esm/</link><guid isPermaLink="false">https://simjaesung.github.io/blog/jest-esm/</guid><pubDate>Sun, 15 Sep 2024 14:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;&lt;strong&gt;Jest 소개&lt;/strong&gt;&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[simsorry.dev's RSS Feed]]></title><description><![CDATA[simsorry blog]]></description><link>https://simjaesung.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 15 Sep 2024 14:32:48 GMT</lastBuildDate><item><title><![CDATA[Jest 에서 ESM 모듈 사용하는 방법]]></title><description><![CDATA[Jest 소개  Jest는 Facebook에서 만들어져 React 프레임워크를 더불어 다양한 JavaScript 프로젝트에서 널리 사용되고 있습니다. Jest는 다음과 같은 기능을 단일 패키지로 제공합니다. Test Runner…]]></description><link>https://simjaesung.github.io/blog/jest-esm/</link><guid isPermaLink="false">https://simjaesung.github.io/blog/jest-esm/</guid><pubDate>Sun, 15 Sep 2024 14:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;&lt;strong&gt;Jest 소개&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 542px; &quot;
@@ -22,14 +22,14 @@
       /&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Jest는 Facebook에서 만들어져 React 프레임워크를 더불어 다양한 JavaScript 프로젝트에서 널리 사용되고 있습니다.&lt;/p&gt;
-&lt;p&gt;Jest는 다음과 같은 기능을 단일 패키지로 제공합니다:&lt;/p&gt;
+&lt;p&gt;Jest는 다음과 같은 기능을 단일 패키지로 제공합니다.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Test Runner&lt;/strong&gt;: 테스트 파일을 찾아 실행하고 결과를 보고합니다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Test Matcher&lt;/strong&gt;: 예상 결과와 실제 결과를 비교하는 함수들을 제공합니다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Test Mock&lt;/strong&gt;: 함수나 모듈의 동작을 시뮬레이션하는 기능을 제공합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Test Runner&lt;/strong&gt;: 테스트 파일을 찾아 실행하고 결과를 보고&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Test Matcher&lt;/strong&gt;: 예상 결과와 실제 결과를 비교하는 함수들을 제공&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Test Mock&lt;/strong&gt;: 함수나 모듈의 동작을 시뮬레이션하는 기능을 제공&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;이전에는 JavaScript 코드를 테스팅하는데 상단 기능들을 각기 다른 라이브러리에서 가져와 조합해서 사용했었지만, Jest가 이를 해결해주었다고 합니다.&lt;/p&gt;
-&lt;p&gt;그래서 Jest가 **“테스팅 프레임워크”**라고 불리기도 한답니다.&lt;/p&gt;
+&lt;p&gt;그래서 Jest가 &lt;strong&gt;테스팅 프레임워크&lt;/strong&gt; 라고 불리기도 한답니다.&lt;/p&gt;
 &lt;h2&gt;Jest 설치 및 설정&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
