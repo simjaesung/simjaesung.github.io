@@ -122,7 +122,7 @@ const square = a => a * a
 
 **`화살표 함수는 일반 함수와는 달리 자신만의 this를 가지지 않습니다.`**
 
-<img src="https://velog.velcdn.com/images/simsorry/post/815247ed-ee80-41d3-9886-6174eeebf57d/image.png" width="45%" height="n%">
+<img src="https://velog.velcdn.com/images/simsorry/post/815247ed-ee80-41d3-9886-6174eeebf57d/image.png" width="80%" height="n%">
 
 그래서 화살표 함수에서 this 키워드로 접근하면, 자신이 아닌 자신의 바로 바깥에 위치한 값을 가져옵니다.
 
