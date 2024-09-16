@@ -17,12 +17,12 @@
 
 /** @type {MetaConfig} */
 const metaConfig = {
-  title: "simsorry.dev",
+  title: "simsorry",
   description: `simsorry blog`,
   author: "simjaesung",
   siteUrl: "https://simjaesung.github.io/",
   lang: "en",
-  utterances: "sungik-choi/gatsby-starter-apple-comment",
+  utterances: "simjaesung/simjaesung.github.io",
   links: {
     github: "https://github.com/simjaesung",
   },
