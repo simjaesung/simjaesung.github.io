@@ -36,7 +36,7 @@ const STATUS = {
 } as const
 ```
 
-`enum` 과 `as const` 는 **TypeScript**에서 상수를 선언할 때 사용하는 개념입니다.
+`enum`, `const enum`, `as const` 는 **TypeScript**에서 상수를 선언할 때 사용하는 개념입니다.
 
 <br/>
 
