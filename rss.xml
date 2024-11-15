@@ -1,4 +1,324 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[simsorry's RSS Feed]]></title><description><![CDATA[simsorry blog]]></description><link>https://simjaesung.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 04 Nov 2024 04:05:31 GMT</lastBuildDate><item><title><![CDATA[enum vs const enum vs as const]]></title><description><![CDATA[TypeScript로 개발을 하다 보면 비슷한 기능을 하는 여러 문법적 개념들을 마주치게 됩니다. 관련하여 많은 것들이 있지만, 이번 글에서는 enum, const enum, as const에 대해서 다뤄보려 합니다. enum, const enum…]]></description><link>https://simjaesung.github.io/blog/TS-enum-comparison/</link><guid isPermaLink="false">https://simjaesung.github.io/blog/TS-enum-comparison/</guid><pubDate>Sun, 03 Nov 2024 13:40:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;TypeScript&lt;/strong&gt;로 개발을 하다 보면 비슷한 기능을 하는 여러 문법적 개념들을 마주치게 됩니다.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[simsorry's RSS Feed]]></title><description><![CDATA[simsorry blog]]></description><link>https://simjaesung.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 15 Nov 2024 10:21:55 GMT</lastBuildDate><item><title><![CDATA[간단하게 알아보는 OAuth 인증 과정]]></title><description><![CDATA[1. OAuth의 개념 OAuth 는 Open Authorization 의 약자로, 주로 사용자 정보를 보유한 서비스 (Google, kakao) 에서 인증과 권한을 위임하는 프로토콜입니다. OAuth…]]></description><link>https://simjaesung.github.io/blog/OAuth/</link><guid isPermaLink="false">https://simjaesung.github.io/blog/OAuth/</guid><pubDate>Fri, 15 Nov 2024 10:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;1. OAuth의 개념&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;OAuth&lt;/code&gt; 는 &lt;strong&gt;Open Authorization&lt;/strong&gt; 의 약자로, 주로 사용자 정보를 보유한 서비스 (Google, kakao) 에서 인증과 권한을 위임하는 프로토콜입니다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;OAuth&lt;/code&gt; 는 애플리케이션이 사용자 비밀번호나 민감한 정보를 요청하지 않고, 사용자로부터 특정 권한을 위임받아 작업을 수행할 수 있도록 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;2. OAuth 역할&lt;/h2&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;&gt;
+      &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 56.44171779141104%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA0klEQVR42q2SyQqEMBBE8/8/5dHl5oIKGkQEQRFEL+7W0A3JXEQdx0AINl3PqqYFfjj7vvPbdR2qqjrsEU+AWZbBtu33gHEcIwxDbNv2DpDi5nl+DlTNTw5plV78AzgyIVTDOI63geu6Yp5n/T1NE9c0cBgGGIaBZVluzbCua5imqeuWZaEsyy+wKApEUaR362qeaZrC931O1bYta6WU7FqQ2HVd/gvt15U7iuc4Dl8yEgQBa2kvCcoOm6aB53no+/7UoapTPHJFcBpTkiS8RhT5A5wZW2adTmkJAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;img_1&quot; title=&quot;&quot; src=&quot;/static/400ac015046f43cdfd26487b21f529b4/a6d36/1.png&quot; srcset=&quot;/static/400ac015046f43cdfd26487b21f529b4/222b7/1.png 163w,
+/static/400ac015046f43cdfd26487b21f529b4/ff46a/1.png 325w,
+/static/400ac015046f43cdfd26487b21f529b4/a6d36/1.png 650w,
+/static/400ac015046f43cdfd26487b21f529b4/e548f/1.png 975w,
+/static/400ac015046f43cdfd26487b21f529b4/3c492/1.png 1300w,
+/static/400ac015046f43cdfd26487b21f529b4/b41cb/1.png 1661w&quot; sizes=&quot;(max-width: 650px) 100vw, 650px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+    &lt;/span&gt;
+&lt;h3&gt;Resource Owner (자원 소유자)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;자원에 대한 접근 권한을 가진 사용자입니다.&lt;/li&gt;
+&lt;li&gt;예) Google Drive에 파일을 가진 실제 사용자&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Client (클라이언트)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;자원 소유자를 대신해서 자원 서버에 접근하고자 하는 &lt;strong&gt;애플리케이션&lt;/strong&gt;입니다.&lt;/li&gt;
+&lt;li&gt;예) 클라이언트 앱은 Google calender에 접근하여 일정을 등록할 수 있는 웹 애플리케이션일 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Resource Server (자원 서버)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;우리가 제어하고자하는 실제 자원, 데이터를 가지고 제공하는 서버입니다.&lt;/li&gt;
+&lt;li&gt;예) Google Drive의 파일 저장 서버나, Google calender 서버가 이에 해당합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Authorization Server (인증 서버)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;사용자의 신원을 확인하고 클라이언트가 자원에 접근할 수 있는 권한을 부여하는 서버입니다.
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Access Token&lt;/strong&gt;을 주는 곳이라고 생각하면 좋을 것 같습니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;보통 자원을 제공하는 서비스 제공자가 직접 운영합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Access Token (접근 토큰)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;클라이언트가 자원 서버에 접근할 수 있도록 권한을 부여 받으면 최종적으로 &lt;strong&gt;Authorization Server&lt;/strong&gt;가 발급해주는 토큰입니다.&lt;/li&gt;
+&lt;li&gt;해당 토큰을 통해 클라이언트는 제한적으로 자원에 접근할 수 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br/&gt;
+&lt;h2&gt;OAuth의 절차 - 1. 등록&lt;/h2&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;&gt;
+      &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 65.6441717791411%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5UlEQVR42q2SOQqEQBBF5/7nEQMTMRMx0EDcUNBAVMQFBXf/UD10B2Oi4/ykoZfH66p64cccx8HWvu+RpqnYfz0FhmEITdOw7/szIIUgnufBcRw0TfMcSHFdF4ZhoK7r/wDJktv9BRjHMSzLwrZtZyAv9J0Mw4A8z8+GpL6u623gOI6sKVxIANu2ha7rly35vbIsWVOWZfkY8gMaTkVR0HXdpe9/zyEJiS/P8wzf95FlmZj6K6bTNCEIAvaG3gogWZGdJEmwbftW/VRVhSzLME2TdVrUsCgKRFHEunYnVVUhSRJRqjcf+Pi8yVcEIwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;img_2&quot; title=&quot;&quot; src=&quot;/static/f4aedac16e6b2b692d4c58d14b39457e/a6d36/2.png&quot; srcset=&quot;/static/f4aedac16e6b2b692d4c58d14b39457e/222b7/2.png 163w,
+/static/f4aedac16e6b2b692d4c58d14b39457e/ff46a/2.png 325w,
+/static/f4aedac16e6b2b692d4c58d14b39457e/a6d36/2.png 650w,
+/static/f4aedac16e6b2b692d4c58d14b39457e/e548f/2.png 975w,
+/static/f4aedac16e6b2b692d4c58d14b39457e/3c492/2.png 1300w,
+/static/f4aedac16e6b2b692d4c58d14b39457e/f1c64/2.png 1390w&quot; sizes=&quot;(max-width: 650px) 100vw, 650px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+    &lt;/span&gt;
+&lt;p&gt;&lt;strong&gt;Client&lt;/strong&gt; 서비스에서 &lt;strong&gt;OAuth&lt;/strong&gt;를 제공하기 위해서는 우선 &lt;strong&gt;Resource Server&lt;/strong&gt; 에 그에 대한 사전 승인을 받아야합니다. 이를 &lt;strong&gt;“register”&lt;/strong&gt; 한다고 합니다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;br/&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;&gt;
+      &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 42.94478527607362%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA5ElEQVR42p1SWw6EIBDj/gcyHsDEY6j4WB+J/qgIIl0G3x9mN5I0nUGs7SAryxJN0zh0XYe2bWGMwdvFwjCE7/sIgsCx53nQWmNZlldg9DI5ooZqgpTyFeZ5XgUJ1JDwY1za/2MUjHOOoiiQ57kTflpG2w9O4rdgFEVI09SJxnHsLmY1ZO6sFJZpOt0+CV4Hul/GPekpbOiZY72x7Tfs5xhFrarqiF3XNWgMxLSfJAnoqBEjVM6hqg9UXUJmfGWeWMSQn8yORYMNwwAhBPq+x17vPI6jqw+X9EfYWTpH5PLqcEv2BaOHve/XvPgQAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;img_3&quot; title=&quot;&quot; src=&quot;/static/7558bd5961d732bf22bd14bf627a8e8f/a6d36/3.png&quot; srcset=&quot;/static/7558bd5961d732bf22bd14bf627a8e8f/222b7/3.png 163w,
+/static/7558bd5961d732bf22bd14bf627a8e8f/ff46a/3.png 325w,
+/static/7558bd5961d732bf22bd14bf627a8e8f/a6d36/3.png 650w,
+/static/7558bd5961d732bf22bd14bf627a8e8f/e548f/3.png 975w,
+/static/7558bd5961d732bf22bd14bf627a8e8f/3c492/3.png 1300w,
+/static/7558bd5961d732bf22bd14bf627a8e8f/c50e3/3.png 2442w&quot; sizes=&quot;(max-width: 650px) 100vw, 650px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+    &lt;/span&gt;
+&lt;p&gt;&lt;strong&gt;Resoure server&lt;/strong&gt; 마다 &lt;strong&gt;OAuth&lt;/strong&gt;에 대한 승인 절차는 다르겠지만, 공통적으로 부여해주는 항목이 꼭 있습니다.&lt;/p&gt;
+&lt;h3&gt;&lt;strong&gt;Client ID&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;말그대로 &lt;strong&gt;Client&lt;/strong&gt;를 구별하기 위해 있는 아이디입니다. 노출되어도 크게 상관없습니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;strong&gt;Client Secret&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Client 식별에 대한 비밀번호입니다. 절대 노출이 되어서는 안됩니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Resource Owner&lt;/strong&gt;로 부터 &lt;strong&gt;OAuth&lt;/strong&gt; 인증을 허가하는데 중요한 역할을 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;strong&gt;Authorized redirect URls&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;권한을 부여하는 과정에서 &lt;strong&gt;Authorized code&lt;/strong&gt;를 전달받을 주소입니다.&lt;/li&gt;
+&lt;li&gt;만약 &lt;strong&gt;OAuth&lt;/strong&gt; 요청을 해당 주소를 통해 하지않고 다른 경로에 한다면, 요청을 무시당하게됩니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Client Secret&lt;/strong&gt; 와 함께 &lt;strong&gt;Resource Owner&lt;/strong&gt;로 부터 &lt;strong&gt;OAuth&lt;/strong&gt; 인증을 허가하는데 중요한 역할을 합니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br/&gt;
+&lt;h2&gt;OAuth의 절차 - 2. Resource Owner의 승인&lt;/h2&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;&gt;
+      &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 58.89570552147239%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABBElEQVR42qWTTYuDMBCG8///jRc9efHkSQQPRRDU4kdtq1K1Br/ydhIqC7sudd2BkMMwz7yTN8NwIKZpQp7nEEL8yLG/gFZA13UwTRN9368dIOgcBsZxDMdxcL/dMNY1musVY9NADMMxYFEUcF0X7eMBTrD6cgGvKghSzPDfkE3kWZavkbce95PS5Q3YNOUI8LdQwCzL0LYt9sLneVbGyHsTaFkWfN//CFxzsrlhGGjI2e81TKqLoghhGGIg2/dEEARIkkSpfFJ9RfUjuU2SwWRS0zTYtg3O+S6g/IO6rsPzPNwJGp1OKM9nDFTPpCrZrSzL3WbIkdM0VRujFoWUDeOoVvIFseyq9XdFA80AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;img_4&quot; title=&quot;&quot; src=&quot;/static/c9d3885ef6d4f6d6cf23dc7f016d208f/a6d36/4.png&quot; srcset=&quot;/static/c9d3885ef6d4f6d6cf23dc7f016d208f/222b7/4.png 163w,
+/static/c9d3885ef6d4f6d6cf23dc7f016d208f/ff46a/4.png 325w,
+/static/c9d3885ef6d4f6d6cf23dc7f016d208f/a6d36/4.png 650w,
+/static/c9d3885ef6d4f6d6cf23dc7f016d208f/23266/4.png 923w&quot; sizes=&quot;(max-width: 650px) 100vw, 650px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+    &lt;/span&gt;
+&lt;p&gt;앞서 &lt;strong&gt;Client&lt;/strong&gt;가 &lt;strong&gt;Resource server&lt;/strong&gt;에 등록을 했기에,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Client&lt;/strong&gt;와 &lt;strong&gt;Resource Server&lt;/strong&gt;에는 각각 그에 관련된 정보가 저장되어있습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;br/&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;&gt;
+      &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 58.89570552147239%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAAA6klEQVR42p2RywqDMBRE8///UuhCWkpXbgWLUF+ooC5EEVz4Kr6nJBixVVs0m5C54TB3huDg6boOfd8vdLIXNAwDu03ThO/7H9ohID1t20JVVTiOM7nlUHJ0XV3X4XkegydJgqqqjgO5y6ZpppV5nuQ7n3ke/7Jc+0vWAt9b0CqQWjYMA3me/4Rz3XVdBEGwbJk/aKiSJCGO479u6UzXNNi2tQ20LAuiKLL2toBco61K8gPKU0UURQjDEFmWsS3J/JMsy2y46XDUarrN+QTlKiAvCqRpyoB1Xe9seZw1ZYnwJiC+X/AaM+ezN6zIrUHNzG5PAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;img_5&quot; title=&quot;&quot; src=&quot;/static/32f8b15875ae33dd5d7c853e47c734d3/a6d36/5.png&quot; srcset=&quot;/static/32f8b15875ae33dd5d7c853e47c734d3/222b7/5.png 163w,
+/static/32f8b15875ae33dd5d7c853e47c734d3/ff46a/5.png 325w,
+/static/32f8b15875ae33dd5d7c853e47c734d3/a6d36/5.png 650w,
+/static/32f8b15875ae33dd5d7c853e47c734d3/e548f/5.png 975w,
+/static/32f8b15875ae33dd5d7c853e47c734d3/3c492/5.png 1300w,
+/static/32f8b15875ae33dd5d7c853e47c734d3/4917c/5.png 3152w&quot; sizes=&quot;(max-width: 650px) 100vw, 650px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+    &lt;/span&gt;
+&lt;p&gt;승인 과정을 알아보기전,&lt;/p&gt;
+&lt;p&gt;만약 &lt;strong&gt;Resource Server&lt;/strong&gt;에 존재하는[ A, B, C, D ]의 기능 중 [B, C] 의 기능만을 사용하고 싶다면 그 인증 범위 또한 지정을 해줄 수 있습니다.&lt;/p&gt;
+&lt;p&gt;이를 &lt;strong&gt;scope&lt;/strong&gt;라고 합니다. 클라이언트가 접근할 수 있는 데이터와 권한의 범위를 라고 생각해주시면 될 것 같습니다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;strong&gt;이제 Resource Owner의 승인 과정을 알아보겠습니다.&lt;/strong&gt;&lt;/p&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;&gt;
+      &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 60.122699386503065%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABsUlEQVR42o2SS0/CQBSF/e3GhXFHXLgz/gHjwsQHCSgJtC5MDIokGMPDAi0tbZk+6LvHuaNggRq9ycmkmZnvnns6eyhUHMeYz+cYj8eYTlVo2gzjyZRrAlVVoes6bNuG4zhot9vIsgzbtVf8SNMUM37JMg2EPkPAtfQWoolhGGLVNE3AJUlCFEXiXhG8AXRdD1kaY2r4uG4OUZVGXB8Io1TsJ0ki1Ov10Gq14Ps+PM+DaZrCzA5wwRzqhxc9xH5Tx6E8x5FswGAeFrYF07JgcdHIruuundGa5/kukPKh0nh+1ZsqLq9ucXF+AZtDUn6pLLPSDFd0i1tP+Bq+daAcH0A9rYCdVRA7DEmWI+aZUW5BEKxHLAXSJmNM/GWPj2JzOVGMxTKASRlxh+SesqKR6RWQfgVSx1qthgl/HhQyvmx/a3dMOt+4vxeOS4GDwQDdblcAixEUV9Iqw0G/j5fOK0z+jCiCMAw3gbIso16vC/B/6qn9jMZdHf3RSDx2RVHEZNRQACm/4XC40am0vh0rD008nlQw63ZAvyaKQuF0Dfw5n/8JpBPeew9MamA5UbB94xM6W5g1jRbtFgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;img_6&quot; title=&quot;&quot; src=&quot;/static/6c3521efa102af20b274d0a9c250d9da/a6d36/6.png&quot; srcset=&quot;/static/6c3521efa102af20b274d0a9c250d9da/222b7/6.png 163w,
+/static/6c3521efa102af20b274d0a9c250d9da/ff46a/6.png 325w,
+/static/6c3521efa102af20b274d0a9c250d9da/a6d36/6.png 650w,
+/static/6c3521efa102af20b274d0a9c250d9da/9c177/6.png 880w&quot; sizes=&quot;(max-width: 650px) 100vw, 650px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+    &lt;/span&gt;
+&lt;p&gt;만약, &lt;strong&gt;Resource Owner&lt;/strong&gt;가 &lt;strong&gt;Client&lt;/strong&gt; 에 있는 &lt;strong&gt;외부 서비스&lt;/strong&gt;를 이용해야된다면,&lt;/p&gt;
+&lt;p&gt;위와 같이 &lt;strong&gt;Client&lt;/strong&gt; 서비스는 &lt;strong&gt;OAuth&lt;/strong&gt; 로그인 화면을 보여주게 됩니다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;br/&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;&gt;
+      &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 38.65030674846626%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABVUlEQVR42pVRPUvDUBTNfxL8B+IqOqud6yxCB6c66qKL4F/o1kFQpEgdDK1WY6pYaUtSn00sbdJ8fx7zLjaiZPHC4V3e5Z13zrmCF8Rw/QiO94MgjFFUaZrSKcsyHMeBoijQNI3uDMPAfD6HUDkVUTpooHzYxM7RDbaqDeyftfLHaQGhJEmo1Wqo1+s54WQywWw2g3AtjXHeesdFh+HynlF/+6L/IipSGkURfN/PP1mUcKxGqLyFqA44Auz1QpwoIQ2jMIRhmmTPtm24rku9ZVmI4+JYBPFVRUMeoNnl6OPqqY/24IOGSZLAzHIZjUZQVZUy47Y4MZ8VEo7LG2Dry2DbK2ClVbC1JXzubiL9fpBkSobDIYExRkrDTHkQBPA8j8A/4PaJ0Hl+hP0gwpbaGe5gdUS4vW6+Dq6EB89DNzP7fJOLfjqdEnRdpy0TIf5RfxdQZPkLhOBV+5BykgoAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;img_7&quot; title=&quot;&quot; src=&quot;/static/ec95309da129eded9ca868f58a1b19c3/a6d36/7.png&quot; srcset=&quot;/static/ec95309da129eded9ca868f58a1b19c3/222b7/7.png 163w,
+/static/ec95309da129eded9ca868f58a1b19c3/ff46a/7.png 325w,
+/static/ec95309da129eded9ca868f58a1b19c3/a6d36/7.png 650w,
+/static/ec95309da129eded9ca868f58a1b19c3/e548f/7.png 975w,
+/static/ec95309da129eded9ca868f58a1b19c3/3c492/7.png 1300w,
+/static/ec95309da129eded9ca868f58a1b19c3/f4fb1/7.png 1766w&quot; sizes=&quot;(max-width: 650px) 100vw, 650px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+    &lt;/span&gt;
+&lt;p&gt;해당 버튼들은 이러한 &lt;strong&gt;url&lt;/strong&gt;로 이동하도록 설정되어있습니다.&lt;/p&gt;
+&lt;p&gt;여기에 &lt;strong&gt;client_id, scope, redirect_uri&lt;/strong&gt; 가 명시되어있는 것을 볼 수 있습니다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;register&lt;/strong&gt; 과정에서 보았던 것들인 것 같군요.&lt;/p&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;br/&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;&gt;
+      &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 55.21472392638037%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABXklEQVR42nWS24rCMBCGff8HEhR9AvFOvBCUIlW0Jm1qa09J+2//cZNFVweG6TSTL3Oa4IsMwyD6yaddLBYoiiL4XibfYBTnHPI8x+12Q1VV4Vxrjc1mg+v1Kn7Xdd+BHlbXtVwktO97pGmKLMvkzBiD1WqFOI7lXCmFpmn+Az2MWRFGkJe2bSUj/mNG9Al7l8k7jCC+yGDfNyohBB6PR5RlGTJ/h74AeSE0egw2Jkdr/7Jk2V5ZIsGM/zcUvnQ4HPB4POSnHV8t6w6ddbBS9vCSBSvY7/ew1n4u+X6/Yz6fB6AbIXX3LCU2DpG2v1UgTHU2mwn449pEUYTdbifWA517ZlY0PfLKybe/eDqdJJ5VcRtMZsLqCJA7NZ1Osd1ukSQJLpcLkrGf3D+tFbJUybCo3ADClssl1uu1+HyAK0WoALm0hNCyn37SbD6hSmmxHNr5fJZhMMYPhL0kjPYHMQRTsiJnsSwAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;img_15&quot; title=&quot;&quot; src=&quot;/static/d01e24f3bbbec5cd951b4dccacbcf5fb/a6d36/15.png&quot; srcset=&quot;/static/d01e24f3bbbec5cd951b4dccacbcf5fb/222b7/15.png 163w,
+/static/d01e24f3bbbec5cd951b4dccacbcf5fb/ff46a/15.png 325w,
+/static/d01e24f3bbbec5cd951b4dccacbcf5fb/a6d36/15.png 650w,
+/static/d01e24f3bbbec5cd951b4dccacbcf5fb/6029f/15.png 906w&quot; sizes=&quot;(max-width: 650px) 100vw, 650px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+    &lt;/span&gt;
+&lt;p&gt;&lt;strong&gt;Resource Owner&lt;/strong&gt;가 해당 버튼을 누른 후 일어나는 일은 &lt;strong&gt;Resource Server&lt;/strong&gt;에 로그인 여부를 확인하는 것 입니다. 만일 로그인이 되어있지않으면 먼저 로그인을 하도록 합니다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;br/&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;&gt;
+      &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 54.601226993865026%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABUUlEQVR42p2S246CMBCGef/HMhCNN7oXIFq4kIAYqCusLQcR/52pYtjohWuTpoeZ+frPdCz8Y1yvV7PmeY4gCF76WJ8AwzDEfD5/nIf1Y6DneXAcB+fzGWVZoiiKh+1tYHe5oO97CuyhTieUdwjfXcj2BBzLfjWKwwHRcolUBGja9hZzn+N461VaY/iwreoaX14IL4ghYokNzTA5IP1Wz5/SdR2apvljaElFTRBe2aZ1RdCbT01nQb+slEYuCZqm2O/3Rq4BSikxmUxMIBvjOMZut8N2u4Xv+xBCIEkSCkoRRZG5cxzb+PeUAgviD3oo5J5aLBYGorU2qjhtLjarHKvns+e6WFI9K6WgsgwVqRxKYzHZtm3MZjOjblzHcZ8Ne36Ee3A6nVIGpNYVWLsbZEcF3XQ3hQxarVbm9Xf6MCNV67UPRXU96hbyR0MWJ1Rth19CYFQZ7ttbHwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;img_8&quot; title=&quot;&quot; src=&quot;/static/4438bf70b2c8d77ee3c2f2cf5dd00794/a6d36/8.png&quot; srcset=&quot;/static/4438bf70b2c8d77ee3c2f2cf5dd00794/222b7/8.png 163w,
+/static/4438bf70b2c8d77ee3c2f2cf5dd00794/ff46a/8.png 325w,
+/static/4438bf70b2c8d77ee3c2f2cf5dd00794/a6d36/8.png 650w,
+/static/4438bf70b2c8d77ee3c2f2cf5dd00794/e2310/8.png 968w&quot; sizes=&quot;(max-width: 650px) 100vw, 650px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+    &lt;/span&gt;
+&lt;p&gt;로그인에 성공을 한다면 이제 url에 있는 &lt;strong&gt;client_id, redirect_uri&lt;/strong&gt; 와 기존 &lt;strong&gt;client&lt;/strong&gt;의 &lt;strong&gt;register&lt;/strong&gt; 과정에서 생성되었던 &lt;strong&gt;client_id, redirect_uri&lt;/strong&gt; 을 비교합니다.&lt;/p&gt;
+&lt;p&gt;만일 둘 중 하나라도 다르다면 &lt;strong&gt;Resource Server&lt;/strong&gt;는 해당 요청을 &lt;strong&gt;거절&lt;/strong&gt;하게 됩니다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;br/&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;&gt;
+      &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 63.190184049079754%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAABfElEQVR42p1T2Y6CQBDk/3/KJzVG4xXjvojsKod4gDAwHMLU0p2FCLKbrJ10hgzTNdVVPRr+EUopXg3DwHQ6be3VoeGN2O12WCwWeDweDFiW5XuANZvZbMaZJAnCMMTtdmPwPwGpuAYgBlRQFAVnFEWI47g5Q//rs1pXB6WoOG/tEcj1eoVpmswmz/Nfu+hhqBDJHJbj4nw+N8VBEMC2bV6JHbG83++QUrYBiUmapi1GIorhuBcu6rpIQZfUNS8uUzuDwYBv5fZKBRGT2EGjWdcUYjoajfrHhtqaz+dwHOcHsMTN83Gp9pNEsqaqY5au61iv10yCDHm+VJtMJlgul9hut7Asq2pTwA/IRQk/lBBJ0bQphIDruhiPx1itVjzgZNLpdGq01vb7PbdMYLX4XsUwSyV0R+DDjJBnCaKKTT1rm80Gw+GQZ5B09jyPvwlU6xtcAjWMT5jHA46HL2bl+z6z6TPpxeXnpCBd6XnRalfaEossy/hldM92Ab8B9x/yDN8jj/4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;img_9&quot; title=&quot;&quot; src=&quot;/static/b1086d648a5c8f55362eb03dcb28ad0e/a6d36/9.png&quot; srcset=&quot;/static/b1086d648a5c8f55362eb03dcb28ad0e/222b7/9.png 163w,
+/static/b1086d648a5c8f55362eb03dcb28ad0e/ff46a/9.png 325w,
+/static/b1086d648a5c8f55362eb03dcb28ad0e/a6d36/9.png 650w,
+/static/b1086d648a5c8f55362eb03dcb28ad0e/eb390/9.png 935w&quot; sizes=&quot;(max-width: 650px) 100vw, 650px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+    &lt;/span&gt;
+&lt;p&gt;&lt;strong&gt;client_id&lt;/strong&gt;와 &lt;strong&gt;redirect_uri&lt;/strong&gt;를 확인하고 일치한다면, 이제 &lt;strong&gt;Resource Owner&lt;/strong&gt;에게 &lt;strong&gt;Client&lt;/strong&gt;의 요청에 동의하는지에 대한 문구를 보여주게 됩니다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;hr&gt;
+&lt;br/&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;&gt;
+      &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 59.50920245398773%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABHklEQVR42p1S22qFMBD0/39KRJ8U3wXx4A2PFO93Rd1mto3YcmxrF5aEJDszOxuFbsa+7+T7Pi3L8vJeuQOEmOeZdF2nsiy/nP8bsG1bsm2bkiRhlQBe1/Ue4LZtXIzCaZqoKApWChKcn1Uq3xVcqQMIVHVdxwRX8SMg2Jumob7vec3znPfjODIw9i8B0UoYhocXUICiLMvIdV3yPI/quj5Ioyji1i+HMgwDGYbBrEgYD0D4JAkAAJVpmvLbqqquAeM4JsuyWMl5YucCueKtaZrkOA4ToAvUyHtFtqCqKgVBcOmnPMM30TTtwwah9iksaYW36+egjqGcWX4LFPfCmrfHg1IBWArgSngMWxTJLvOvnxwT7kT2wn8kvMeveAfsCKmBWYvrtAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;img_10&quot; title=&quot;&quot; src=&quot;/static/43a9e3cb8c4c8dc921df8bd2a9f56f70/a6d36/10.png&quot; srcset=&quot;/static/43a9e3cb8c4c8dc921df8bd2a9f56f70/222b7/10.png 163w,
+/static/43a9e3cb8c4c8dc921df8bd2a9f56f70/ff46a/10.png 325w,
+/static/43a9e3cb8c4c8dc921df8bd2a9f56f70/a6d36/10.png 650w,
+/static/43a9e3cb8c4c8dc921df8bd2a9f56f70/c0255/10.png 920w&quot; sizes=&quot;(max-width: 650px) 100vw, 650px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+    &lt;/span&gt;
+&lt;p&gt;&lt;strong&gt;Resource Owner&lt;/strong&gt;가 자신의 정보를 특정 서비스에 제공하는 데 동의하면, &lt;strong&gt;Resource Server&lt;/strong&gt;는 이 동의에 따라 &lt;strong&gt;Resource Owner&lt;/strong&gt;의 허용 정보(사용자 ID 및 허용 범위인 scope)를 저장합니다. 여기서 &lt;strong&gt;scope&lt;/strong&gt;는 클라이언트가 접근할 수 있는 데이터와 권한의 범위를 말합니다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;h2&gt;OAuth의 절차 - 3. Resource Server의 승인&lt;/h2&gt;
+&lt;p&gt;앞서 &lt;strong&gt;Resource Owner&lt;/strong&gt;의 승인을 받았으니, 이제는 &lt;strong&gt;Resource Server&lt;/strong&gt;의 승인이 필요한 상황입니다.&lt;/p&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;&gt;
+      &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 60.73619631901841%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABiklEQVR42oWS646CQAyFef9HMv7R+AAmmqAmRkUQRGGQq9w8ezqbcdVdsk0mg5162n6thX/s8XjoY7632y3atjWP3+fFrP9ExPq+R57nSNMUs9kMSqln3KdZQ5X1DM4o4vs+zuczXNfV3/P5HEEQoOZb5HmokgR9VT0rfQpKGxUf7nWN9HJBsF7DPx6RZpmuTN6iKMLhcMCNv6P9Hu5yiYKiNePRdT+CpsWOTociIYMaaYu+oih0ZR59IuY4Dq7XK8qyRMEqPzlahoNwOlIsYQu/mL4k/YvbG8OmaXR2OUZM2m/pb1lxw0patmjEhGVNLINDEZHJZKI5mSARlEQNb4Ffk52Y+KbTKeI4HhbcbDbY7XY4nU460BwZgNwX8oqZVBLKdBeLhWYpaxSTc0dUb4K2bWM0GumWzWDkzwJeBGVlSg5GLAxDjMdj2KsVEop5ZJ7fbujMoougCAiT/iPT0MJLbMc7p3jI1VKstuQWdPe73l1raGpDUxWOiggSIlEUiolKsYuIHWVZhi80WqFHp48MkQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;img_11&quot; title=&quot;&quot; src=&quot;/static/ed8553a4ce4e75c47ad0704df7d6801b/a6d36/11.png&quot; srcset=&quot;/static/ed8553a4ce4e75c47ad0704df7d6801b/222b7/11.png 163w,
+/static/ed8553a4ce4e75c47ad0704df7d6801b/ff46a/11.png 325w,
+/static/ed8553a4ce4e75c47ad0704df7d6801b/a6d36/11.png 650w,
+/static/ed8553a4ce4e75c47ad0704df7d6801b/e548f/11.png 975w,
+/static/ed8553a4ce4e75c47ad0704df7d6801b/350de/11.png 998w&quot; sizes=&quot;(max-width: 650px) 100vw, 650px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+    &lt;/span&gt;
+&lt;p&gt;&lt;strong&gt;Resource Server의 승인 절차는 다음과 같습니다. (상단의 그림과 함께 참고해 주세요!)&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Resource Owner&lt;/strong&gt;가 서비스 제공에 동의하면, &lt;strong&gt;Resource Server&lt;/strong&gt;는 &lt;code&gt;Authorization Code&lt;/code&gt;라는 임시 인증 코드를 생성합니다.&lt;/li&gt;
+&lt;li&gt;생성된 &lt;code&gt;Authorization Code&lt;/code&gt;가 포함된 &lt;strong&gt;URL&lt;/strong&gt;을 &lt;strong&gt;HTTP 리다이렉트&lt;/strong&gt; 방식으로 &lt;strong&gt;Resource&lt;/strong&gt; &lt;strong&gt;Owner&lt;/strong&gt;를 자동으로 &lt;strong&gt;Client&lt;/strong&gt;에 연결시킵니다.&lt;/li&gt;
+&lt;li&gt;이를 통해 &lt;strong&gt;Client&lt;/strong&gt;는 &lt;code&gt;Authorization Code&lt;/code&gt;를 전달받을 수 있습니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr/&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;&gt;
+      &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 60.122699386503065%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABWUlEQVR42p2T226CQBCG9/1fxFfwQhMvTNU06o3GEwKtVgSKuCAbDsLfmW0wtkk9dJLNwmT332/m3xV4Iqqq0vN0OsV+v/+Rq0PgySiKAqPRCOv1Wv+XZfk/wZpEKYVer4fVaoU8zzVpHMc4n896zdOEHFLKi0jE31GE5HRCRbTikRLTNEWWZZc5SRJ4nqdHEIbwgwCSDihrwt+NvQ4WYaKIKELafDweIYnGWyxgNZv4nM1wMAx48zkS3/8W5L4wyaN9DEncIaftRgNut4uchFIaBR2kBQeDAUzTxF+0nONRO/pCphhESPVrEVztEdzc8XgM27Zxq/w6zyUvl0uYtF4dDoi3W+SUq0WFZVlot9v6bvE1uFeu67rodDp4HQ7hTiZ4a7Xg9/tINxt2EIL7xyc6jvPwxTbIhI/dDhn18p1EA4KSRFyRgeKWw/eipIokiccEpOjllErhC31kopaJzw3AAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;img_12&quot; title=&quot;&quot; src=&quot;/static/da907182b6a2296a01a2ce86646f71b1/a6d36/12.png&quot; srcset=&quot;/static/da907182b6a2296a01a2ce86646f71b1/222b7/12.png 163w,
+/static/da907182b6a2296a01a2ce86646f71b1/ff46a/12.png 325w,
+/static/da907182b6a2296a01a2ce86646f71b1/a6d36/12.png 650w,
+/static/da907182b6a2296a01a2ce86646f71b1/d2c2a/12.png 929w&quot; sizes=&quot;(max-width: 650px) 100vw, 650px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+    &lt;/span&gt;
+&lt;p&gt;이후 &lt;strong&gt;Client&lt;/strong&gt;는 받은 &lt;code&gt;Authorization Code&lt;/code&gt;와 함께 기존 인증 정보를 사용하여 &lt;strong&gt;Resource Server&lt;/strong&gt;에 &lt;strong&gt;Resource Owner&lt;/strong&gt;의 최종 인증을 요청합니다.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;&gt;
+      &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 60.73619631901841%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABHUlEQVR42qVR2W6DMBDk/z+LVyQgLxEI6ioqhAQZS+YwcYQ9ZS2ahCpqaLvSan2MZ8c7HjaGtdZVKSU456uzx/B+S5gkCXa73T8I7T2tsWCMIU1TXC4XtLLFOIwLzP5NIXtjYO/MrTXXuIqra7RS+Ey6CzPftXNvaWH4vBmAghVoRAOlFIZhcNm2rUvi+VnhNHOeDUxlMH3MGwGcDiccqyOKonBZluWt3gjJua7rNn25ruvXLsdx7Nx7CnowhCLLMoRhuMJS/Vp7pI7I8jzHOI4vVRJ2v99DCOFcVmr9xuv7Hr7vIwgCaK1fuh1FkcM3vEFZleCCQ1/v7zzqSvMj4i1BvyBHzWQgKwl1Vpj0tCb8Pvgt5rhKPHqZ80L4CYchqqzzO+jEAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;img_13&quot; title=&quot;&quot; src=&quot;/static/f606f338897ba51b65fee38e4c426a4c/a6d36/13.png&quot; srcset=&quot;/static/f606f338897ba51b65fee38e4c426a4c/222b7/13.png 163w,
+/static/f606f338897ba51b65fee38e4c426a4c/ff46a/13.png 325w,
+/static/f606f338897ba51b65fee38e4c426a4c/a6d36/13.png 650w,
+/static/f606f338897ba51b65fee38e4c426a4c/8efc2/13.png 828w&quot; sizes=&quot;(max-width: 650px) 100vw, 650px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+    &lt;/span&gt;
+&lt;p&gt;모든 인증 정보가 확인되면, &lt;strong&gt;Resource Server&lt;/strong&gt;는 최종적으로 &lt;strong&gt;Client&lt;/strong&gt;에게 &lt;strong&gt;Access&lt;/strong&gt; &lt;strong&gt;Token&lt;/strong&gt;을 발급합니다.&lt;/p&gt;
+&lt;p&gt;발급된 &lt;strong&gt;Access Token&lt;/strong&gt;은 &lt;strong&gt;Client&lt;/strong&gt;에 저장되며, &lt;strong&gt;Client&lt;/strong&gt;는 필요할 때마다 이 &lt;strong&gt;Access Token&lt;/strong&gt;을 사용하여 &lt;strong&gt;Resource Server&lt;/strong&gt;에 요청을 보내고 리소스에 접근할 수 있습니다.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 650px; &quot;&gt;
+      &lt;span class=&quot;gatsby-resp-image-background-image&quot; style=&quot;padding-bottom: 61.963190184049076%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABIElEQVR42q2SUU+DMACE+f8/ivBASIAEHiACblEyCQKFIGUDBNqz1MzNyOI27QslvX693lXBHaPve7iui67r5D/n/GtNuQV03FhVFTRNk99/AZZlCcMwUBQFxn4EeSEY6CAEdwKbpoHneRinEWxgGIoBUz3J9d+BswDtOfiBg1EmAgTaskWapqvyy8BjLALAnhhYzDBHgp4AdEeR5dlJx096CWRMiOf5ppYJIZcdLnn4vv+jsW9uz1xM4yRLWW15cRaGIYIgkE6vKYVSCsuykOf5Z8xnt1OyLINt23AcZ/XENeByuGmaiKJI7tnFMVrRPBeGlCUPXdflFZb5NcDFhKqqeNxssBdv8XW7xVuS4CByVfDH8Z4R1A8JxucarKrxARzTqMBRdYQrAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;&gt;&lt;/span&gt;
+  &lt;img class=&quot;gatsby-resp-image-image&quot; alt=&quot;img_14&quot; title=&quot;&quot; src=&quot;/static/13f05f8bf103121608ba79e543d5e87a/a6d36/14.png&quot; srcset=&quot;/static/13f05f8bf103121608ba79e543d5e87a/222b7/14.png 163w,
+/static/13f05f8bf103121608ba79e543d5e87a/ff46a/14.png 325w,
+/static/13f05f8bf103121608ba79e543d5e87a/a6d36/14.png 650w,
+/static/13f05f8bf103121608ba79e543d5e87a/38af3/14.png 894w&quot; sizes=&quot;(max-width: 650px) 100vw, 650px&quot; style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;
+    &lt;/span&gt;
+&lt;p&gt;Resource Server는 이 Access Token을 통해 user id가 1인 사용자가 b와 c 권한에 대한 접근을 요청하고 있음을 확인할 수 있습니다.&lt;/p&gt;
+&lt;br/&gt;
+&lt;h2&gt;마무리&lt;/h2&gt;
+&lt;p&gt;OAuth는 다양한 서비스 간 안전한 인증과 권한 부여를 가능하게 하며, 특히 사용자의 민감한 정보를 보호하는 데 중요한 역할을 합니다.&lt;/p&gt;
+&lt;p&gt;이번 글을 통해 OAuth의 기본적인 흐름을 이해하고, 실제 인증 과정에서 어떤 일이 일어나는지 감을 잡으셨기를 바랍니다. 이후에는 Refresh Token, 토큰 만료와 갱신 등 더 깊은 OAuth 개념을 공부해 보시면 더욱 좋을 것 같습니다. :)&lt;/p&gt;
+&lt;style class=&quot;grvsc-styles&quot;&gt;
+  .grvsc-container {
+    overflow: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 1rem;
+    padding-top: var(--grvsc-padding-top, var(--grvsc-padding-v, 1rem));
+    padding-bottom: 1rem;
+    padding-bottom: var(--grvsc-padding-bottom, var(--grvsc-padding-v, 1rem));
+    border-radius: 8px;
+    border-radius: var(--grvsc-border-radius, 8px);
+    font-feature-settings: normal;
+    line-height: 1.4;
+  }
+  
+  .grvsc-code {
+    display: table;
+  }
+  
+  .grvsc-line {
+    display: table-row;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
+  
+  .grvsc-line &gt; * {
+    position: relative;
+  }
+  
+  .grvsc-gutter-pad {
+    display: table-cell;
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  .grvsc-gutter {
+    display: table-cell;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter::before {
+    content: attr(data-content);
+  }
+  
+  .grvsc-source {
+    display: table-cell;
+    padding-left: 1.5rem;
+    padding-left: var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem));
+    padding-right: 1.5rem;
+    padding-right: var(--grvsc-padding-right, var(--grvsc-padding-h, 1.5rem));
+  }
+  
+  .grvsc-source:empty::after {
+    content: &apos; &apos;;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .grvsc-gutter + .grvsc-source {
+    padding-left: 0.75rem;
+    padding-left: calc(var(--grvsc-padding-left, var(--grvsc-padding-h, 1.5rem)) / 2);
+  }
+  
+  /* Line transformer styles */
+  
+  .grvsc-has-line-highlighting &gt; .grvsc-code &gt; .grvsc-line::before {
+    content: &apos; &apos;;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .grvsc-line-diff-add::before {
+    background-color: var(--grvsc-line-diff-add-background-color, rgba(0, 255, 60, 0.2));
+  }
+  
+  .grvsc-line-diff-del::before {
+    background-color: var(--grvsc-line-diff-del-background-color, rgba(255, 0, 20, 0.2));
+  }
+  
+  .grvsc-line-number {
+    padding: 0 2px;
+    text-align: right;
+    opacity: 0.7;
+  }
+  
+&lt;/style&gt;</content:encoded></item><item><title><![CDATA[enum vs const enum vs as const]]></title><description><![CDATA[TypeScript로 개발을 하다 보면 비슷한 기능을 하는 여러 문법적 개념들을 마주치게 됩니다. 관련하여 많은 것들이 있지만, 이번 글에서는 enum, const enum, as const에 대해서 다뤄보려 합니다. enum, const enum…]]></description><link>https://simjaesung.github.io/blog/TS-enum-comparison/</link><guid isPermaLink="false">https://simjaesung.github.io/blog/TS-enum-comparison/</guid><pubDate>Sun, 03 Nov 2024 13:40:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;strong&gt;TypeScript&lt;/strong&gt;로 개발을 하다 보면 비슷한 기능을 하는 여러 문법적 개념들을 마주치게 됩니다.&lt;/p&gt;
 &lt;p&gt;관련하여 많은 것들이 있지만, 이번 글에서는 &lt;code&gt;enum&lt;/code&gt;, &lt;code&gt;const enum&lt;/code&gt;, &lt;code&gt;as const&lt;/code&gt;에 대해서 다뤄보려 합니다.&lt;/p&gt;
 &lt;br/&gt;
 &lt;pre class=&quot;grvsc-container github-light-theme grvsc-ps-t4tStz&quot; data-language=&quot;tsx&quot; data-index=&quot;0&quot;&gt;&lt;code class=&quot;grvsc-code&quot;&gt;&lt;span class=&quot;grvsc-line&quot;&gt;&lt;span class=&quot;grvsc-source&quot;&gt;&lt;span class=&quot;grvsc-tiszgT-6 grvsc-t4tStz-2&quot;&gt;// enum을 사용한 방식&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
