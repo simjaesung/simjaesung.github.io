@@ -3,9 +3,18 @@ title: "간단하게 알아보는 OAuth 인증 과정"
 category: "CS"
 date: "2024-11-15 19:00:00 +09:00"
 desc: ""
-thumbnail: "./images/"
+thumbnail: "./images/OAuth/OAuth.png"
 alt: ""
 ---
+
+<aside>
+💡
+
+이고잉님의 [**WEb2-OAuth**](https://www.youtube.com/playlist?list=PLuHgQVnccGMA4guyznDlykFJh28_R08Q-) 강의를 보며 정리한 글입니다.
+
+사진 자료는 해당 강의 영상의 자료를 캡처하여 위에 덧붙인 것입니다.
+
+</aside>
 
 ## 1. OAuth의 개념
 
